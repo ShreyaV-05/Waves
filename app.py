@@ -16,9 +16,6 @@ app.register_blueprint(groc_bp, url_prefix='/groc/')
 app.register_blueprint(cafe_bp, url_prefix='/cafe/')
 app.register_blueprint(movie_bp, url_prefix='/movie/')
 
-
-
-
 #create a Flask instance
 app = Flask(__name__)
 

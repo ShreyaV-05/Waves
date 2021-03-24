@@ -7,17 +7,50 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
     </style>
-    <script src=""></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
 </head>
 <body>
 
+<div class="w3-top w3-bar w3-black">
+    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <a href="#Grocery" class="w3-bar-item w3-button">Grocery</a>
+    <a href="#Books" class="w3-bar-item w3-button">Books</a>
+    <a href="#Cafes" class="w3-bar-item w3-button">Cafes</a>
+    <a href="#Movies" class="w3-bar-item w3-button">Movies</a>
+</div>
+
 <img src="img_la.jpg" alt="LA" style="width:100%">
 
-<div class="w3-container w3-black">
+<div class="w3-container w3-red">
     <h1>Heading</h1>
-    <p>Paragraph</p>
+    <p>This will be our paragraph</p>
+    <p>This is another paragraph</p>
+</div>
+
+<div class="w3-row">
+
+    <div class="w3-third">
+        <img src="img_avatar.png" alt="Name1" style="width:100%">
+    </div>
+
+    <div class="w3-third">
+        <img src="img_avatar.png" alt="Name2" style="width:100%">
+    </div>
+
+    <div class="w3-third">
+        <img src="img_avatar.png" alt="Name3" style="width:100%">
+    </div>
 
 </div>
+
+<img class="nature" src="img_snowtops.jpg" width="100%">
+<img class="nature" src="img_mountains.jpg" width="100%">
+<img class="nature" src="img_nature.jpg" width="100%">
+
+<script>
+w3.slideshow(".nature", 1500);
+</script>
 
 </body>
 </html>
