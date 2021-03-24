@@ -1,6 +1,20 @@
 import main
 
 from flask import Flask, render_template
+#blueprints for books
+from books.app import books_bp
+#blueprints for groc
+from groc.app import groc_bp
+#blueprints for cafe
+from cafe.app import cafe_bp
+
+app = Flask(__name__)
+app.register_blueprint(books_bp, url_prefix='/books/')
+app.register_blueprint(groc_bp, url_prefix='/groc/')
+app.register_blueprint(cafe_bp, url_prefix='/cafe/')
+
+
+
 
 #create a Flask instance
 app = Flask(__name__)
