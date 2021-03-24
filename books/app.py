@@ -8,3 +8,4 @@ books_bp = Blueprint('books', __name__,
 @books_bp.route('/')
 def index():
     return ""
+"""ASK ANDREW WHAT THIS DOES AND WOULD NAVBAR BE HERE OR IN GEN HOME PAGE HMTL??"""

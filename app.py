@@ -7,14 +7,14 @@ from books.app import books_bp
 from groc.app import groc_bp
 #blueprints for cafe
 from cafe.app import cafe_bp
+#blueprints for movie
+from movie.app import movie_bp
 
 app = Flask(__name__)
 app.register_blueprint(books_bp, url_prefix='/books/')
 app.register_blueprint(groc_bp, url_prefix='/groc/')
 app.register_blueprint(cafe_bp, url_prefix='/cafe/')
-
-
-
+app.register_blueprint(movie_bp, url_prefix='/movie/')
 
 #create a Flask instance
 app = Flask(__name__)
