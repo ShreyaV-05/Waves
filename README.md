@@ -4,7 +4,7 @@
 Hi! This is our Yelp Website Project! by p3 Waves
 # Project Plan
 ## Website Summary
-ch page sorted by location all falling under different cuisines.
+
 ## Authors
 * Andrea Abed
 * Ryan Luo
