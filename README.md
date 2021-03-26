@@ -4,7 +4,7 @@
 Hi! This is our Yelp Website Project! by p3 Waves
 # Project Plan
 ## Website Summary
-
+For our project we wanted to recreate Yelp. Our site will include many categories that visitors can browse through and leave ratings or find directions to with ease. We also want to create a database sign-ups/log-ins and reviews. Each page will have its own select locations (address, reviews, descriptions included). We plan to create a site that is extremely user friendly and one where users can navigate through easily.
 ## Authors
 * Andrea Abed
 * Ryan Luo
