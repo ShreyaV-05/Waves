@@ -61,4 +61,4 @@ Our current web pages on the running site include:
 |Ticket:   |Shreya   |Template for book genre page, review form template, page for bookstores| |
 |Ticket:   |Andrea   || |
 |Ticket:|Diane   |  |  |
-|Ticket:|Ryan  |  |  |
+|Ticket:|Ryan  |Creation of homepage and navbar, login system, Informative description  |  |
