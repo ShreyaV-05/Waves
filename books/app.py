@@ -81,16 +81,16 @@ def genre_map():  # mapping the front end to the backend, put in the function so
 
 
 @books_bp.route("/romance/")
-def rating_route():
+def genretemp_route():
     return render_template("action.html", projects=projects.setup(), genre_table=rom_pg)
 @books_bp.route("/action/")
-def rating_route_1():
+def genretemp_route_1():
     return render_template("action.html", projects=projects.setup(), genre_table=action_pg)
 @books_bp.route("/fantasy/")
-def rating_route_2():
+def genretemp_route_2():
     return render_template("fantasy.html", projects=projects.setup(), genre_table=fantasy_pg)
 @books_bp.route("/biblio/")
-def rating_route_3():
+def genretemp_route_3():
     return render_template("biblio.html", projects=projects.setup(), genre_table=biblio_pg)
 
 @books_bp.route("/rec/", methods=['GET', 'POST'])
