@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body style="background-color: #85B291;">
+<!-- Navigation Bar from bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">{{name}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+        <ul class="navbar-nav">
+            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/responserev/">Review Form</a>
+            <a class="nav-link" href="/soon/">Coming Soon</a>
+            <a class="nav-link" href="/random/">Pick For Me!</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Restaurants
+                </a>
+                <div class="dropdown-menu" style="position: absolute; z-index: 2; background-color: black;">
+                    <a class="nav-link" href="/sandiego/">San Diego</a>
+                    <a class="nav-link" href="/SDREV/">San Diego Review</a>
+                    <a class="nav-link" href="/losangeles/">Los Angeles</a>
+                    <a class="nav-link" href="/LAREV/">Los Angeles Review</a>
+                    <a class="nav-link" href="/sanfrancisco/">San Francisco</a>
+                    <a class="nav-link" href="/SFREV/">San Francisco Review</a>
+
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../static/bootstrap.bundle.min.js"></script>
+<div class="container-fluid" style="position: relative; z-index: 1;">
+</div>
+
+<div>
+    <div class="product" style="margin-top: 2%;">
+        <div class="row" style="padding-top: 0%; padding-bottom: 5%;">
+
+            <div class="col-8" >
+                {% block title %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <div class="row" style="padding-left: 10%;">
+            <div class="col-sm-4">
+                {% block hotspot1 %}
+                {% endblock %}
+            </div>
+
+            <div class="col-sm-4">
+                {% block hotspot2 %}
+                {% endblock %}
+            </div>
+
+            <div class="col-sm-4">
+                {% block hotspot3 %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+{% block script %}
+<script src="https://threejs.org/build/three.js"></script>
+<script src="{{ url_for('static', filename='vanta.topology.min.js') }}"></script>
+
+<!-- below not working at moment, need to figure out how to make animation work -->
+<script>
+    VANTA.TOPOLOGY({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 2750.00,
+        minWidth: 800.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+{% endblock %}
+
+{% block style %}
+<style>
+      html, body {
+          margin: 0;
+          height: 100%;
+          color: white;
+      }
+
+      h1{
+          font-size: 5em;
+      }
+
+
+      .col-4 {
+        background-color: cornsilk;
+        color: black;
+        border: 5px solid green;
+        padding: 40px;
+      }
+
+
+       /* Next & previous buttons */
+     .prev,
+     .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: black;
+        font-weight: bold;
+        font-size: 50px;
+        border-radius: 0 10px 10px 0;
+        user-select: none;
+        -webkit-user-select: none;
+     }
+
+/* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 10px 0 0 10px;
+    }
+.drop-down-menu li {z-index: auto;}
+.drop-down-menu ul {z-index: 1000;}
+    }
+
+  </style>
+
+{% endblock %}
+
+</html>
