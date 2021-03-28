@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 </head>
 <body>
 
+<h3>Recommendation Form</h3>
+
+<div class="container">
+    \    <form method="POST" ID="myForm" action={{url_for('.rec_route')}}>
+
+    <label for="genre">Genre</label>
+    <select id="genre" name="genre">
+        <option value="Romance">Romance</option>
+        <option value="Action">Action</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Bibliography">Bibliography</option>
+        <option value="Other">Other</option>
+
+    </select>
+
+    <label for="genre">If Selected "Other" For Genre:</label>
+    <textarea id="genre" name="genre" placeholder="If another genre type in..." style="height:200px"></textarea>
+
+    <label for="book">Title of the Book</label>
+    <input type="text" id="book" name="book" placeholder="Title of the book">
+
+
+    <label for="author">Author</label>
+    <input type="text" id="author" name="author" placeholder="Name of the author">
+
+    <input type="submit" value="Submit">
+</form>
+</div>
+
 </body>
-</html>
