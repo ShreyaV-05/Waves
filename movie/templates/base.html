@@ -3,49 +3,24 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% block head %}
-    {% endblock %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    </style>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 
 <body style="background-color: #85B291;">
 <!-- Navigation Bar from bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">{{name}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
+    <a href="#home" class="w3-bar-item w3-button">Movie Theatres</a>
 
-        <ul class="navbar-nav">
-            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="/responserev/">Review Form</a>
-            <a class="nav-link" href="/soon/">Coming Soon</a>
-            <a class="nav-link" href="/random/">Pick For Me!</a>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Restaurants
-                </a>
-                <div class="dropdown-menu" style="position: absolute; z-index: 2; background-color: black;">
-                    <a class="nav-link" href="/sandiego/">San Diego</a>
-                    <a class="nav-link" href="/SDREV/">San Diego Review</a>
-                    <a class="nav-link" href="/losangeles/">Los Angeles</a>
-                    <a class="nav-link" href="/LAREV/">Los Angeles Review</a>
-                    <a class="nav-link" href="/sanfrancisco/">San Francisco</a>
-                    <a class="nav-link" href="/SFREV/">San Francisco Review</a>
-
-                </div>
-
-            </li>
-
-        </ul>
+    <div class="w3-right w3-hide-small">
+        <a href="#Grocery" class="w3-bar-item w3-button">Grocery</a>
+        <a href="#Books" class="w3-bar-item w3-button">Books</a>
+        <a href="#Cafes" class="w3-bar-item w3-button">Cafes</a>
+        <a href="#Movies" class="w3-bar-item w3-button">Movie Theatres</a>
     </div>
-</nav>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../static/bootstrap.bundle.min.js"></script>
-<div class="container-fluid" style="position: relative; z-index: 1;">
-</div>
 
 <div>
     <div class="product" style="margin-top: 2%;">
@@ -60,17 +35,17 @@
 
         <div class="row" style="padding-left: 10%;">
             <div class="col-sm-4">
-                {% block hotspot1 %}
+                {% movie theatre1 %}
                 {% endblock %}
             </div>
 
             <div class="col-sm-4">
-                {% block hotspot2 %}
+                {% movie theatre2 %}
                 {% endblock %}
             </div>
 
             <div class="col-sm-4">
-                {% block hotspot3 %}
+                {% movie theatre3 %}
                 {% endblock %}
             </div>
 
