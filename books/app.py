@@ -47,17 +47,68 @@ db.create_all()  # creates books.db file
 def index():
     return ""
 """ASK ANDREW WHAT THIS DOES AND WOULD NAVBAR BE HERE OR IN GEN HOME PAGE HMTL??"""
-genre_pg = []
+
+@books_bp.route("/rec/", methods=['GET', 'POST'])
+def recs_route():
+    if request.method == 'POST':
+        genre= request.form['genre']
+        book = request.form['book']
+        author = request.form['author']
+
+
+        #  adding user into the rec database
+        new_rec = genre(genre = genre,book = book, author = author)
+        db.session.add(new_rec)
+        db.session.commit()
+
+        return render_template("rec.html", projects=projects.setup())
+
+    return render_template("rec.html", projects=projects.setup())
+recs_recs = []
+rom_recs = []
+action_recs = []
+fantasy_recs = []
+biblio_recs = []
+
+def recs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = recs.query.all()
+    for rec in database:
+        recs_dict = {'id':rec.id, 'genre': rec.genre, 'book': rec.book, 'descrip':rec.descrip}
+        recs_recs.append(recs_dict)
+
+        #getting the value that corresponds with the key 'location'
+        genre = recs_dict['genre']
+
+        #if it is rom
+        if genre == 'Romance':
+            #append to rom books
+            rom_recs.append(recs_dict)
+        #if it is action
+        if genre == 'Action':
+            #append to action books
+            action_recs.append(recs_dict)
+        #if it is fantasy
+        if genre == 'Fantasy':
+            #append to fantasy books
+            fantasy_recs.append(recs_dict)
+        #if it is biblio
+        if genre == 'Bibliography':
+            #append to bibliography books
+            biblio_recs.append(recs_dict)
+
+
+genresep_pg = []
 rom_pg = []
 action_pg = []
 fantasy_pg = []
 biblio_pg = []
 
+
 def genresep_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = genresep.query.all()
     for genre in database:
         genresep_dict = {'id':genresep.id, 'genre': genresep.genre, 'book': genresep.book, 'descrip':genresep.descrip}
-        genre_pg.append(genresep_dict)
+        genresep_pg.append(genresep_dict)
 
         #getting the value that corresponds with the key 'location'
         genre = genresep_dict['genre']
@@ -82,30 +133,13 @@ def genresep_map():  # mapping the front end to the backend, put in the function
 
 @books_bp.route("/romance/")
 def genretemp_route():
-    return render_template("romance.html", projects=projects.setup(), genre_table=rom_pg)
+    return render_template("romance.html", projects=projects.setup(), genresep_table=rom_pg, recs_table=rom_recs)
 @books_bp.route("/action/")
 def genretemp_route_1():
-    return render_template("action.html", projects=projects.setup(), genre_table=action_pg)
+    return render_template("action.html", projects=projects.setup(), genresep_table=action_pg, recs_table=action_recs)
 @books_bp.route("/fantasy/")
 def genretemp_route_2():
-    return render_template("fantasy.html", projects=projects.setup(), genre_table=fantasy_pg)
+    return render_template("fantasy.html", projects=projects.setup(), genresep_table=fantasy_pg, recs_table=fantasy_recs)
 @books_bp.route("/biblio/")
 def genretemp_route_3():
-    return render_template("biblio.html", projects=projects.setup(), genre_table=biblio_pg)
-
-@books_bp.route("/rec/", methods=['GET', 'POST'])
-def recs_route():
-    if request.method == 'POST':
-        genre= request.form['genre']
-        book = request.form['book']
-        author = request.form['author']
-
-
-        #  adding user into the rec database
-        new_rec = genre(genre = genre,book = book, author = author)
-        db.session.add(new_rec)
-        db.session.commit()
-
-        return render_template("rec.html", projects=projects.setup())
-
-    return render_template("rec.html", projects=projects.setup())
+    return render_template("biblio.html", projects=projects.setup(), genresep_table=biblio_pg, recs_table=biblio_recs)
