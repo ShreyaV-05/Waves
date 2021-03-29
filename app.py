@@ -28,6 +28,9 @@ def home():
     #Flask import uses Jinga to render HTML
     return render_template("home.html")
 
+
+
+
 if __name__ == "__main__":
     #runs the application on the repl development server/raspberry pi
     app.run(debug=True, port='8080', host='127.0.0.1')
