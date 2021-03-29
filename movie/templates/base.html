@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    </style>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color: #85B291;">
+<!-- Navigation Bar from bootstrap -->
+<div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
+    <a href="#home" class="w3-bar-item w3-button">Movie Theatres</a>
+
+    <div class="w3-right w3-hide-small">
+        <a href="#Grocery" class="w3-bar-item w3-button">Grocery</a>
+        <a href="#Books" class="w3-bar-item w3-button">Books</a>
+        <a href="#Cafes" class="w3-bar-item w3-button">Cafes</a>
+        <a href="#Movies" class="w3-bar-item w3-button">Movie Theatres</a>
+    </div>
+
+<div>
+    <div class="product" style="margin-top: 2%;">
+        <div class="row" style="padding-top: 0%; padding-bottom: 5%;">
+
+            <div class="col-8" >
+                {% block title %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <div class="row" style="padding-left: 10%;">
+            <div class="col-sm-4">
+                {% movie theatre1 %}
+                {% endblock %}
+            </div>
+
+            <div class="col-sm-4">
+                {% movie theatre2 %}
+                {% endblock %}
+            </div>
+
+            <div class="col-sm-4">
+                {% movie theatre3 %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+{% block script %}
+<script src="https://threejs.org/build/three.js"></script>
+<script src="{{ url_for('static', filename='vanta.topology.min.js') }}"></script>
+
+<!-- below not working at moment, need to figure out how to make animation work -->
+<script>
+    VANTA.TOPOLOGY({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 2750.00,
+        minWidth: 800.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+{% endblock %}
+
+{% block style %}
+<style>
+      html, body {
+          margin: 0;
+          height: 100%;
+          color: white;
+      }
+
+      h1{
+          font-size: 5em;
+      }
+
+
+      .col-4 {
+        background-color: cornsilk;
+        color: black;
+        border: 5px solid green;
+        padding: 40px;
+      }
+
+
+       /* Next & previous buttons */
+     .prev,
+     .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: black;
+        font-weight: bold;
+        font-size: 50px;
+        border-radius: 0 10px 10px 0;
+        user-select: none;
+        -webkit-user-select: none;
+     }
+
+/* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 10px 0 0 10px;
+    }
+.drop-down-menu li {z-index: auto;}
+.drop-down-menu ul {z-index: 1000;}
+    }
+
+  </style>
+
+{% endblock %}
+
+</html>
