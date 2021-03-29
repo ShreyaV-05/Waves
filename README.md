@@ -56,9 +56,9 @@ Our current web pages on the running site include:
 # Big Ticket History
 
 ## March 26 - Big Tickets
-|Big Tickets   |Assigned To   |Description   |Grade   |
-|---|---|---|---|
-|Ticket:   |Shreya   |start backend for diff databases, review form template, page for bookstores started, made bp for each group (worked on main app.py and everything uder book directory| |
-|Ticket:   |Andrea   | creating format for movie theatre category (possibly format that other categories can use), creating frontend for recommend feature, worked on trying to connect each app.py blue print to the main to run (didn't work)| |
-|Ticket:|Diane   |Deployment + runtime link, page for cafes (research) started, started on searchbar/navigation system |  |
-|Ticket:|Ryan  |Creation of homepage and navbar, login system, Informative description, worked on home.html under general templates|  |
+|Name  |Progress/Accomplishments   |Grade   |
+|---|---|---|
+|Shreya   |start backend for diff databases, review form template, page for bookstores started, made bp for each group (worked on main app.py and everything uder book directory| |
+|Andrea   | creating format for movie theatre category (possibly format that other categories can use), creating frontend for recommend feature, worked on trying to connect each app.py blue print to the main to run (didn't work)| |
+|Diane   |Deployment + runtime link, page for cafes (research) started, started on searchbar/navigation system |  |
+|Ryan  |Creation of homepage and navbar, login system, Informative description, worked on home.html under general templates|  |
