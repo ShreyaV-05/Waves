@@ -58,7 +58,7 @@ Our current web pages on the running site include:
 ## March 26 - Big Tickets
 |Big Tickets   |Assigned To   |Description   |Grade   |
 |---|---|---|---|
-|Ticket:   |Shreya   |Template for book genre page, review form template, page for bookstores| |
+|Ticket:   |Shreya   |start backend for diff databases, review form template, page for bookstores| |
 |Ticket:   |Andrea   || |
 |Ticket:|Diane   |  |  |
 |Ticket:|Ryan  |Creation of homepage and navbar, login system, Informative description  |  |
