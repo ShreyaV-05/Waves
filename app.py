@@ -13,11 +13,12 @@ from movie.app import movie_bp
 from mini_labs.app import mini_labs_bp
 
 app = Flask(__name__)
-app.register_blueprint(books_bp, url_prefix='/books/')
-app.register_blueprint(groc_bp, url_prefix='/groc/')
-app.register_blueprint(cafe_bp, url_prefix='/cafe/')
-app.register_blueprint(movie_bp, url_prefix='/movie/')
-app.register_blueprint(mini_labs_bp, url_prefix='/mini_labs/')
+
+app.register_blueprint(groc_bp, url_prefix='/groc')
+app.register_blueprint(cafe_bp, url_prefix='/cafe')
+app.register_blueprint(movie_bp, url_prefix='/movie')
+app.register_blueprint(mini_labs_bp, url_prefix='/mini_labs')
+app.register_blueprint(books_bp, url_prefix='/books')
 
 #create a Flask instance
 app = Flask(__name__)
