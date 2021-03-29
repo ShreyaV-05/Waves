@@ -42,7 +42,7 @@ input[type=submit]:hover {
 <h3>Recommendation Form</h3>
 
 <div class="container">
-    \    <form method="POST" ID="myForm" action={{url_for('.rec_route')}}>
+        <form method="POST" ID="myForm" action={{url_for('.rec_route')}}>
 
     <label for="genre">Genre</label>
     <select id="genre" name="genre">
@@ -54,8 +54,8 @@ input[type=submit]:hover {
 
     </select>
 
-    <label for="genre">If Selected "Other" For Genre:</label>
-    <textarea id="genre" name="genre" placeholder="If another genre type in..." style="height:200px"></textarea>
+    <label for="genrediff">If Selected "Other" For Genre:</label>
+    <textarea id="genrediff" name="genrediff" placeholder="If another genre type in..." style="height:200px"></textarea>
 
     <label for="book">Title of the Book</label>
     <input type="text" id="book" name="book" placeholder="Title of the book">
@@ -63,6 +63,9 @@ input[type=submit]:hover {
 
     <label for="author">Author</label>
     <input type="text" id="author" name="author" placeholder="Name of the author">
+
+    <label for="descrip">Synopsis</label>
+    <textarea id="descrip" name="descrip" placeholder="Short summary...">style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
 </form>
