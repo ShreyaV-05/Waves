@@ -17,6 +17,8 @@ For our project we wanted to recreate Yelp. Our site will include many categorie
 * address embed to google maps
 * reviews for each location (and an add review function)
 * user interactive features such as reviews and ratings
+* log in/sign up database
+* search/navigation function
 
 Tabs: 
 * home page
