@@ -29,14 +29,18 @@ class genresep(db.Model):
 class recs(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     genre = db.Column(db.String(100))
+    genrediff = db.Column(db.String(100))
     book = db.Column(db.String(500))
-    author = db.Column(db.String(1000))
+    author = db.Column(db.String(500))
+    descrip = db.Column(db.String(1000))
 
     # constructor that initializes the database
-    def __init__(self, genre, book, author):
+    def __init__(self, genre,genrediff, book, author,descrip):
         self.genre = genre
+        self.genrediff = genrediff
         self.book = book
         self.author = author
+        self.descrip = descrip
 
 
 
@@ -52,12 +56,14 @@ def index():
 def recs_route():
     if request.method == 'POST':
         genre= request.form['genre']
+        genrediff= request.form['genrediff']
         book = request.form['book']
         author = request.form['author']
+        descrip = request.form['descrip']
 
 
         #  adding user into the rec database
-        new_rec = genre(genre = genre,book = book, author = author)
+        new_rec = genre(genre=genre, genrediff=genrediff, book=book, author=author, descrip=descrip)
         db.session.add(new_rec)
         db.session.commit()
 

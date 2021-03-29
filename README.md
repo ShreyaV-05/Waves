@@ -17,6 +17,8 @@ For our project we wanted to recreate Yelp. Our site will include many categorie
 * address embed to google maps
 * reviews for each location (and an add review function)
 * user interactive features such as reviews and ratings
+* log in/sign up database
+* search/navigation function
 
 Tabs: 
 * home page
@@ -56,9 +58,9 @@ Our current web pages on the running site include:
 # Big Ticket History
 
 ## March 26 - Big Tickets
-|Big Tickets   |Assigned To   |Description   |Grade   |
-|---|---|---|---|
-|Ticket:   |Shreya   |Template for book genre page, review form template, page for bookstores| |
-|Ticket:   |Andrea   || |
-|Ticket:|Diane   |  |  |
-|Ticket:|Ryan  |Creation of homepage and navbar, login system, Informative description  |  |
+|Name  |Progress/Accomplishments   |Grade   |
+|---|---|---|
+|Shreya   |start backend for diff databases, review form template, page for bookstores started, made bp for each group (worked on main app.py and everything uder book directory| |
+|Andrea   | creating format for movie theatre category (possibly format that other categories can use), creating frontend for recommend feature, worked on trying to connect each app.py blue print to the main to run (didn't work)| |
+|Diane   |Deployment + runtime link, page for cafes (research) started, started on searchbar/navigation system |  |
+|Ryan  |Creation of homepage and navbar, login system, Informative description, worked on home.html under general templates|  |
