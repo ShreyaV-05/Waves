@@ -1,4 +1,4 @@
-"""Fibonacci algorithm contained within a class """
+"""Exponential algorithm contained within a class """
 
 
 class Exponential:
@@ -17,16 +17,16 @@ class Exponential:
         # Instant end = Instant.now();    // time capture -- end
         # this.timeElapsed = Duration.between(start, end);
 
-    """Algorithm for building Fibonacci sequence, this id called from __init__"""
+    """Algorithm for building Exponential sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [1, 2]  # fibonacci starting array/list
+        f = [1, 2]  # exponential starting array/list
         while limit > 0:
             self.set_data(f[0])
             f = [f[1], f[1] * f[1]]
             limit -= 1
 
-    """Method/Function to set Fibonacci data: list, dict, and dictID are instance variables of Class"""
+    """Method/Function to set Exponential data: list, dict, and dictID are instance variables of Class"""
     def set_data(self, num):
         self._list.append(num)
         self._dict[self._dictID] = self._list.copy()
@@ -58,9 +58,9 @@ if __name__ == "__main__":
     exponential = Exponential(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Fibonacci number for {n} = {exponential.number}")
-    print(f"Fibonacci series for {n} = {exponential.list}")
+    print(f"Exponential number for {n} = {exponential.number}")
+    print(f"Exponential series for {n} = {exponential.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Fibonacci sequence {i + 1} = {exponential.get_sequence(i)}")
+        print(f"Exponential sequence {i + 1} = {exponential.get_sequence(i)}")
