@@ -5,8 +5,8 @@ class Exponential:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
-        if series < 2 or series > 20:
-            raise ValueError("Series must be between 2 and 20")
+        if series < 2 or series > 6:
+            raise ValueError("Series must be between 2 and 6")
         self._series = series
         self._list = []
         self._dict = {}

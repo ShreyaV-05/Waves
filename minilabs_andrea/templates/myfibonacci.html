@@ -22,9 +22,9 @@
 
 <!-- Nav Bar -->
 <div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
-    <a href="#home" class="w3-bar-item w3-button">Andrea's Mini Lab</a>
 
     <div class="w3-right w3-hide-small">
+        <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="groc" class="w3-bar-item w3-button">Grocery</a>
         <a href="books" class="w3-bar-item w3-button">Books</a>
         <a href="cafe" class="w3-bar-item w3-button">Cafes</a>
@@ -38,23 +38,23 @@
 
 
         <!-- Title -->
-        <div class="col-12" style="text-align: center;">
-            <h1><strong>Exponential Series in Python (Power of 10)</strong></h1>
+        <div class="col-12" style="text-align: center; color:powderblue;">
+            <h1><strong>Exponential Series in Python (10 to the power of n)</strong></h1>
         </div>
 
         <!-- Input and Content -->
 
         <div class="jumbotron text-center row">
-            <div class="col-md-6">
+            <div class="col-md-6" style="color:pink;">
                 <h3>Type the nth number in the exponential sequence:</h3>
                 <img class="img-responsive py-3" src="/static/assets/Fibonacci_spiral.svg" alt="" width="25%" height="Auto">
                 <form id="fibForm" action="/minilabs_andrea/myfibonacci" method="POST" >
-                    <input name="series" id="series" type="number" min="2" max="20" >
+                    <input name="series" id="series" type="number" min="2" max="6" >
                     <button>Go!</button>
                 </form>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" style="color:powderblue;">
                 <h3>Exponential series for {{exponential.series}}</h3>
                 <!-- Number, List table -->
                 <table class="mx-auto">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Sequence -->
-        <div class="col-12" style="text-align: left; ">
+        <div class="col-12" style="text-align: left; color:lightyellow;">
             <!-- Series -->
             <h3>Exponential build up for series: {{exponential.series}} number: {{exponential.number}}</h3>
             <div class="overflow-auto" style="height: 200px">
