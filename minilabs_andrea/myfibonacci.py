@@ -20,7 +20,7 @@ class Exponential:
     """Algorithm for building Exponential sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [1, 2]  # exponential starting array/list
+        f = [1, 10]  # exponential starting array/list
         while limit > 0:
             self.set_data(f[0])
             f = [f[1], f[1] * f[1]]
