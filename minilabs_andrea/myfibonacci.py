@@ -23,7 +23,7 @@ class Exponential:
         f = [1, 2]  # exponential starting array/list
         while limit > 0:
             self.set_data(f[0])
-            f = [f[1], f[1] * f[1]]
+            f = [f[1], f[1] * 2]
             limit -= 1
 
     """Method/Function to set Exponential data: list, dict, and dictID are instance variables of Class"""
