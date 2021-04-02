@@ -20,11 +20,17 @@ class PrimeNum:
     """Algorithm for getting prime numbers sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 2]
+        f = [0, 1]
+        while limit > 0:
+            self.set_data(f[0])
+        f = [f[1], f[1] * f[1]]
         for num in range(0,n+1):
             if all(num%i!=0 for i in range(2,num)):
                 print (num)
 
+        self.set_data(f[0])
+        f = [f[1], f[1] * f[1]]
+        limit -= 1
     """Method/Function to set prime numbers data: list, dict, and dictID are instance variables of Class"""
     def set_data(self, num):
         self._list.append(num)
