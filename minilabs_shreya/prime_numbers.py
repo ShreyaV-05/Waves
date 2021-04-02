@@ -20,7 +20,7 @@ class PrimeNum:
     """Algorithm for getting prime numbers sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 1]
+        f = [0, 2]
         for num in range(0,n+1):
             if all(num%i!=0 for i in range(2,num)):
                 print (num)
