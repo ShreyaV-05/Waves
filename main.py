@@ -1,5 +1,6 @@
 
 from flask import Flask, render_template
+"""
 #blueprints for books
 from books.app import books_bp
 #blueprints for groc
@@ -8,6 +9,7 @@ from groc.app import groc_bp
 from cafe.app import cafe_bp
 #blueprints for movie
 from movie.app import movie_bp
+"""
 #blueprints for minilab
 from minilabs_andrea.app import minilabs_andrea_bp
 from minilabs_shreya.app import minilabs_shreya_bp
@@ -15,11 +17,12 @@ from minilabs_diane.app import minilabs_diane_bp
 from minilabs_ryan.app import minilabs_ryan_bp
 
 app = Flask(__name__)
-
+"""
 app.register_blueprint(groc_bp, url_prefix='/groc')
 app.register_blueprint(cafe_bp, url_prefix='/cafe')
 app.register_blueprint(movie_bp, url_prefix='/movie')
 app.register_blueprint(books_bp, url_prefix='/books')
+"""
 app.register_blueprint(minilabs_shreya_bp, url_prefix='/shreya')
 app.register_blueprint(minilabs_andrea_bp, url_prefix='/andrea')
 app.register_blueprint(minilabs_diane_bp, url_prefix='/diane')
