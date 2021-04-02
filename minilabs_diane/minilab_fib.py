@@ -20,10 +20,10 @@ class Factorial:
     """Algorithm for calculating Factorials, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 1]  # e starting array/list
+        f = [1, 2]  # factorial starting array/list
         while limit > 0:
             self.set_data(f[0])
-            f = [f[1], f[0] + f[1]]
+            f = [f[1], f[0] * f[1]]
             limit -= 1
 
     """Method/Function to set Fibonacci data: list, dict, and dictID are instance variables of Class"""
