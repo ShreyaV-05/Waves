@@ -10,7 +10,7 @@ from cafe.app import cafe_bp
 #blueprints for movie
 from movie.app import movie_bp
 #blueprints for minilab
-from mini_labs.app import mini_labs_bp
+from minilabs_andrea.app import mini_labs_bp
 
 app = Flask(__name__)
 app.register_blueprint(groc_bp, url_prefix='/groc')
