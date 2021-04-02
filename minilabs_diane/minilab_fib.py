@@ -1,7 +1,7 @@
 """Fibonacci algorithm contained within a class """
 
 
-class Factorial:
+class Cubed:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
@@ -17,13 +17,13 @@ class Factorial:
         # Instant end = Instant.now();    // time capture -- end
         # this.timeElapsed = Duration.between(start, end);
 
-    """Algorithm for calculating Factorials, this id called from __init__"""
+    """Algorithm for calculating Cubed, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [1, 2]  # factorial starting array/list
+        f = [1, 5]  # cubed starting array/list
         while limit > 0:
             self.set_data(f[0])
-            f = [f[1], f[0] * f[1]]
+            f = [f[1], f[1] * f[1] * f[1]]
             limit -= 1
 
     """Method/Function to set Fibonacci data: list, dict, and dictID are instance variables of Class"""
@@ -53,14 +53,14 @@ class Factorial:
 # Tester Code
 if __name__ == "__main__":
     '''Value for testing'''
-    n = 20
+    n = 10
     '''Constructor of Class object'''
-    factorial = Factorial(n)
+    cubed = Cubed(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Factorial Sequence place for {n} = {factorial.number}")
-    print(f"Factorial series for {n} = {factorial.list}")
+    print(f"5 Cubed cubed Sequence place for {n} = {cubed.number}")
+    print(f"5 Cubed cubed series for {n} = {cubed.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Factorial {i + 1} = {factorial.get_sequence(i)}")
+        print(f"5 Cubed cubed {i + 1} = {cubed.get_sequence(i)}") #(5^3x)
