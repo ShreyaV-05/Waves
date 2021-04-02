@@ -55,12 +55,12 @@ if __name__ == "__main__":
     '''Value for testing'''
     n = 20
     '''Constructor of Class object'''
-    fibonacci = Fibonacci(n)
+    e = E(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Fibonacci number for {n} = {fibonacci.number}")
-    print(f"Fibonacci series for {n} = {fibonacci.list}")
+    print(f"e decimal place for {n} = {e.number}")
+    print(f"e series for {n} = {e.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Fibonacci sequence {i + 1} = {fibonacci.get_sequence(i)}")
+        print(f"e decimal {i + 1} = {e.get_sequence(i)}")
