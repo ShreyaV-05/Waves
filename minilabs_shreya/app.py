@@ -9,5 +9,5 @@ minilabs_shreya_bp = Blueprint('shreya', __name__,
 @minilabs_shreya_bp.route('/fibonacci', methods=["GET", "POST"])
 def fibonacci():
     if request.form:
-        return render_template("minilabs_shreya/prime_numbers.html", fibonacci=PrimeNum(int(request.form.get("series"))))
-    return render_template("minilabs_shreya/prime_numbers.html", fibonacci=PrimeNum(2))
+        return render_template("minilabs_shreya/prime_numbers.html", primenum=PrimeNum(int(request.form.get("series"))))
+    return render_template("minilabs_shreya/prime_numbers.html", primenum=PrimeNum(2))
