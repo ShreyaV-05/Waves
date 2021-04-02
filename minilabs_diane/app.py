@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 
-from minilabs_diane.minilab_fib import E
+from minilabs_diane.minilab_fib import Factorial
 
 minilabs_diane_bp = Blueprint('minilabs_diane', __name__,
                                template_folder='templates',
@@ -10,5 +10,5 @@ minilabs_diane_bp = Blueprint('minilabs_diane', __name__,
 @minilabs_diane_bp.route('/fibonacci', methods=["GET", "POST"])
 def fibonacci():
     if request.form:
-        return render_template("minilabs_diane/fib.html", fibonacci=E(int(request.form.get("series"))))
-    return render_template("minilabs_diane/fib.html", fibonacci=E(2))
+        return render_template("minilabs_diane/fib.html", fibonacci=Factorial(int(request.form.get("series"))))
+    return render_template("minilabs_diane/fib.html", fibonacci=Factorial(2))

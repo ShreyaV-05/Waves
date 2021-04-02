@@ -1,7 +1,7 @@
 """Fibonacci algorithm contained within a class """
 
 
-class Factorial:
+class PrimeNum:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
@@ -17,16 +17,15 @@ class Factorial:
         # Instant end = Instant.now();    // time capture -- end
         # this.timeElapsed = Duration.between(start, end);
 
-    """Algorithm for calculating Factorials, this id called from __init__"""
+    """Algorithm for getting prime numbers sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 1]  # e starting array/list
-        while limit > 0:
-            self.set_data(f[0])
-            f = [f[1], f[0] + f[1]]
-            limit -= 1
+        f = [0, 1]
+        for num in range(0,n+1):
+            if all(num%i!=0 for i in range(2,num)):
+                print (num)
 
-    """Method/Function to set Fibonacci data: list, dict, and dictID are instance variables of Class"""
+    """Method/Function to set prime numbers data: list, dict, and dictID are instance variables of Class"""
     def set_data(self, num):
         self._list.append(num)
         self._dict[self._dictID] = self._list.copy()
@@ -55,12 +54,12 @@ if __name__ == "__main__":
     '''Value for testing'''
     n = 20
     '''Constructor of Class object'''
-    factorial = Factorial(n)
+    primenum = PrimeNum(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Factorial Sequence place for {n} = {factorial.number}")
-    print(f"Factorial series for {n} = {factorial.list}")
+    print(f"Prime numbers till number for {n} = {primenum.number}")
+    print(f"Prime numbers series for {n} = {primenum.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Factorial {i + 1} = {factorial.get_sequence(i)}")
+        print(f"Prime Number sequence {i + 1} = {primenum.get_sequence(i)}")
