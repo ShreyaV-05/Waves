@@ -5,8 +5,8 @@ class Exponential:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
-        if series < 2 or series > 20:
-            raise ValueError("Series must be between 2 and 20")
+        if series < 2 or series > 10:
+            raise ValueError("Series must be between 2 and 10")
         self._series = series
         self._list = []
         self._dict = {}
@@ -55,12 +55,12 @@ if __name__ == "__main__":
     '''Value for testing'''
     n = 6
     '''Constructor of Class object'''
-    fibonacci = Fibonacci(n)
+    exponential = Exponential(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Fibonacci number for {n} = {fibonacci.number}")
-    print(f"Fibonacci series for {n} = {fibonacci.list}")
+    print(f"Fibonacci number for {n} = {exponential.number}")
+    print(f"Fibonacci series for {n} = {exponential.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Fibonacci sequence {i + 1} = {fibonacci.get_sequence(i)}")
+        print(f"Fibonacci sequence {i + 1} = {exponential.get_sequence(i)}")
