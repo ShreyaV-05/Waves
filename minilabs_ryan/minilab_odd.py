@@ -1,7 +1,7 @@
 """Fibonacci algorithm contained within a class """
 
 
-class PrimeNum:
+class Odd:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
@@ -54,12 +54,12 @@ if __name__ == "__main__":
     '''Value for testing'''
     n = 20
     '''Constructor of Class object'''
-    primenum = PrimeNum(n)
+    odd = Odd(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Prime numbers till number for {n} = {primenum.number}")
-    print(f"Prime numbers series for {n} = {primenum.list}")
+    print(f"Prime numbers till number for {n} = {odd.number}")
+    print(f"Prime numbers series for {n} = {odd.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Prime Number sequence {i + 1} = {primenum.get_sequence(i)}")
+        print(f"Prime Number sequence {i + 1} = {odd.get_sequence(i)}")
