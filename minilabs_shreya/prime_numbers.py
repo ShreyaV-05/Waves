@@ -20,7 +20,7 @@ class PrimeNum:
     """Algorithm for getting prime numbers sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        p = [0, 1]
+        f = [0, 1]
         for num in range(0,n+1):
             if all(num%i!=0 for i in range(2,num)):
                 print (num)
@@ -57,9 +57,9 @@ if __name__ == "__main__":
     primenum = PrimeNum(n)
 
     '''Using getters to obtain data from object'''
-    print(p"Prime numbers till number for {n} = {primenum.number}")
-    print(p"Prime numbers series for {n} = {primenum.list}")
+    print(f"Prime numbers till number for {n} = {primenum.number}")
+    print(f"Prime numbers series for {n} = {primenum.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(p"Prime Number sequence {i + 1} = {primenum.get_sequence(i)}")
+        print(f"Prime Number sequence {i + 1} = {primenum.get_sequence(i)}")
