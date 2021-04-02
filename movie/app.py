@@ -15,4 +15,4 @@ def index():
 @movie_bp.route('/movies', methods=["GET", "POST"])
 def movies():
     if request.form:
-        return render_template("movie/base.html")
+        return render_template("movie/moviefront.html")
