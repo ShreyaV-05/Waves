@@ -38,15 +38,15 @@
 
 
         <!-- Title -->
-        <div class="col-12" style="text-align: center; color:powderblue;">
-            <h1><strong>Exponential Series in Python (10 to the power of n)</strong></h1>
+        <div class="col-12" style="text-align: center; color:lightgreen;">
+            <h1><strong>Exponential Series in Python (2 to the power of (n-1))</strong></h1>
         </div>
 
         <!-- Input and Content -->
 
         <div class="jumbotron text-center row">
             <div class="col-md-6" style="color:pink;">
-                <h3>Type the nth number in the exponential sequence:</h3>
+                <h3>Type an nth number into the exponential sequence:</h3>
                 <img class="img-responsive py-3" src="/static/assets/Fibonacci_spiral.svg" alt="" width="25%" height="Auto">
                 <form id="fibForm" action="/minilabs_andrea/myfibonacci" method="POST" >
                     <input name="series" id="series" type="number" min="2" max="6" >
@@ -55,7 +55,7 @@
             </div>
 
             <div class="col-md-6" style="color:powderblue;">
-                <h3>Exponential series for {{exponential.series}}</h3>
+                <h3>Exponential series for n={{exponential.series}}</h3>
                 <!-- Number, List table -->
                 <table class="mx-auto">
                     <tr>
@@ -73,16 +73,25 @@
         <!-- Sequence -->
         <div class="col-12" style="text-align: left; color:lightyellow;">
             <!-- Series -->
-            <h3>Exponential build up for series: {{exponential.series}} number: {{exponential.number}}</h3>
+            <h3>Exponential build up for series: n={{exponential.series}}      number: {{exponential.number}}</h3>
             <div class="overflow-auto" style="height: 200px">
                 {% for i in range(exponential.series) %}
                 <h5>{{exponential.get_sequence(i)}}</h5>
                 {% endfor %}
             </div>
-            <!-- Code
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Falgorithm%2Ffibonacci.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>        </div>
 
-    --></div>
+
+</div>
+    <h1 style="font-size: 18px;">Binary Point Grading (Click on each link to see code)</h1>
+    <!-- Code/Explanation -->
+    <h2 style="font-size: 12px"><a href="https://github.com/ShreyaV-05/Waves/blob/main/minilabs_shreya/prime_numbers.py#L4">Point 1: Individual Section Blueprint</a></h2>
+    <h2 style="font-size: 12px"><a href="https://github.com/ShreyaV-05/Waves/blob/e85f66233c982d6ea547c50b62c8a84584d549b4/main.py#L15-L26">Point 2: Defining a Class</a></h2>
+    <h2 style="font-size: 12px"><a href="https://github.com/ShreyaV-05/Waves/blob/e85f66233c982d6ea547c50b62c8a84584d549b4/minilabs_shreya/app.py#L1-L6">Point 3: Creating object from class</a></h2>
+    <h2 style="font-size: 12px"><a href="https://github.com/ShreyaV-05/Waves/blob/e85f66233c982d6ea547c50b62c8a84584d549b4/minilabs_shreya/prime_numbers.py#L4-L18">Point 4: Using "getters"</a></h2>
+    <h2 style="font-size: 12px"><a>Point 5: bbbb</a></h2>
+
+</div>
+</div>
 
 </div>
 </div>
