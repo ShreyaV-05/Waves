@@ -2,7 +2,7 @@
 
 
 class Odd:
-    """Initializer of class takes series parameter and returns Class Objectg"""
+    """Initializer of class takes series parameter and returns Class Object"""
     def __init__(self, series):
         """Built in validation and exception"""
         if series < 2 or series > 100:
@@ -17,13 +17,15 @@ class Odd:
         # Instant end = Instant.now();    // time capture -- end
         # this.timeElapsed = Duration.between(start, end);
 
-    """Algorithm for getting prime numbers sequence, this id called from __init__"""
+    """Algorithm for getting odd numbers sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 1]
-        for num in range(0,n+1):
-            if all(num%i!=0 for i in range(2,num)):
-                print (num)
+        for i in range(limit):
+            if i % 2 != 0: #odd numbers
+                self.set_data(i)
+            i = i + 1
+
+
 
     """Method/Function to set prime numbers data: list, dict, and dictID are instance variables of Class"""
     def set_data(self, num):
@@ -52,14 +54,14 @@ class Odd:
 # Tester Code
 if __name__ == "__main__":
     '''Value for testing'''
-    n = 20
+    n = 50
     '''Constructor of Class object'''
     odd = Odd(n)
 
     '''Using getters to obtain data from object'''
-    print(f"Prime numbers till number for {n} = {odd.number}")
-    print(f"Prime numbers series for {n} = {odd.list}")
+    print(f"Odd numbers till number for {n} = {odd.number}")
+    print(f"Odd numbers series for {n} = {odd.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"Prime Number sequence {i + 1} = {odd.get_sequence(i)}")
+        print(f"Odd Number sequence {i + 1} = {odd.get_sequence(i)}")
