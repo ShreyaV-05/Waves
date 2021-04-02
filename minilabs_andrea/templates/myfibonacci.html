@@ -6,22 +6,22 @@
     <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
         <!-- Title -->
         <div class="col-12" style="text-align: center;">
-            <h1><strong>Fibonacci series in Python - Exponential Version (Power of 2)</strong></h1>
+            <h1><strong>Exponential Series (Power of 10)</strong></h1>
         </div>
 
         <!-- Input and Content -->
         <div class="jumbotron text-center row">
             <div class="col-md-6">
-                <h3>Type the nth number in the exponential sequence?</h3>
+                <h3>Type the nth number in the exponential sequence:</h3>
                 <img class="img-responsive py-3" src="/static/assets/Fibonacci_spiral.svg" alt="" width="25%" height="Auto">
-                <form id="fibForm" action="/andrea/" method="POST" >
-                    <input name="series" id="series" type="number" min="2" max="100" >
+                <form id="fibForm" action="/minilabs_andrea/myfibonacci/" method="POST" >
+                    <input name="series" id="series" type="number" min="2" max="20" >
                     <button>Go!</button>
                 </form>
             </div>
 
             <div class="col-md-6">
-                <h3>Fibonacci series for {{fibonacci.series}}</h3>
+                <h3>Exponential series for {{exponential.series}}</h3>
                 <!-- Number, List table -->
                 <table class="mx-auto">
                     <tr>
@@ -29,8 +29,8 @@
                         <th scope="col">List</th>
                     </tr>
                     <tr>
-                        <td>{{fibonacci.number}}</td>
-                        <td>{{fibonacci.list}}</td>
+                        <td>{{exponential.number}}</td>
+                        <td>{{exponential.list}}</td>
                     </tr>
                 </table>
             </div>
@@ -39,10 +39,10 @@
         <!-- Sequence -->
         <div class="col-12" style="text-align: left; ">
             <!-- Series -->
-            <h3>Fibonacci build up for series: {{fibonacci.series}} number: {{fibonacci.number}}</h3>
+            <h3>Exponential build up for series: {{exponential.series}} number: {{exponential.number}}</h3>
             <div class="overflow-auto" style="height: 200px">
-                {% for i in range(fibonacci.series) %}
-                <h5>{{fibonacci.get_sequence(i)}}</h5>
+                {% for i in range(exponential.series) %}
+                <h5>{{exponential.get_sequence(i)}}</h5>
                 {% endfor %}
             </div>
             <!-- Code -->
