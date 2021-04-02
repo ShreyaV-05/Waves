@@ -1,7 +1,7 @@
 """Fibonacci algorithm contained within a class """
 
 
-class E:
+class Factorial:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
@@ -17,7 +17,7 @@ class E:
         # Instant end = Instant.now();    // time capture -- end
         # this.timeElapsed = Duration.between(start, end);
 
-    """Algorithm for calculating e decimals, this id called from __init__"""
+    """Algorithm for calculating Factorials, this id called from __init__"""
     def calc_series(self):
         limit = self._series
         f = [0, 1]  # e starting array/list
@@ -55,12 +55,12 @@ if __name__ == "__main__":
     '''Value for testing'''
     n = 20
     '''Constructor of Class object'''
-    e = E(n)
+    factorial = Factorial(n)
 
     '''Using getters to obtain data from object'''
-    print(f"e decimal place for {n} = {e.number}")
-    print(f"e series for {n} = {e.list}")
+    print(f"Factorial Sequence place for {n} = {factorial.number}")
+    print(f"Factorial series for {n} = {factorial.list}")
 
     '''Using method to get data from object'''
     for i in range(n):
-        print(f"e decimal {i + 1} = {e.get_sequence(i)}")
+        print(f"Factorial {i + 1} = {factorial.get_sequence(i)}")
