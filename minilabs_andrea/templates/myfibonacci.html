@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% extends "layout.html" %}
 
 {% block content %}
 <div class="container">
@@ -13,9 +12,9 @@
         <!-- Input and Content -->
         <div class="jumbotron text-center row">
             <div class="col-md-6">
-                <h3>Type the nth number in the fibonacci sequence?</h3>
+                <h3>Type the nth number in the exponential sequence?</h3>
                 <img class="img-responsive py-3" src="/static/assets/Fibonacci_spiral.svg" alt="" width="25%" height="Auto">
-                <form id="fibForm" action="/algorithm/fibonacci" method="POST" >
+                <form id="fibForm" action="/andrea/" method="POST" >
                     <input name="series" id="series" type="number" min="2" max="100" >
                     <button>Go!</button>
                 </form>
