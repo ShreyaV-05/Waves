@@ -23,7 +23,7 @@ app.register_blueprint(cafe_bp, url_prefix='/cafe')
 app.register_blueprint(movie_bp, url_prefix='/movie')
 app.register_blueprint(books_bp, url_prefix='/books')
 """
-app.register_blueprint(minilabs_shreya_bp, url_prefix='/shreya')
+app.register_blueprint(minilabs_shreya_bp, url_prefix='/minilabs_shreya')
 app.register_blueprint(minilabs_andrea_bp, url_prefix='/andrea')
 app.register_blueprint(minilabs_diane_bp, url_prefix='/diane')
 app.register_blueprint(minilabs_ryan_bp, url_prefix='/ryan')
