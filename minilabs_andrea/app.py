@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from wavesfibonacci import Fibonacci
 
-algorithm_bp = Blueprint('algorithm', __name__,
+waves_fibbonacci_bp = Blueprint('algorithm', __name__,
                          template_folder='templates',
                          static_folder='static', static_url_path='assets')
 
