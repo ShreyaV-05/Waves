@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from minilabs_andrea.myfibonacci import Fibonacci
+from minilabs_andrea.myfibonacci import Exponential
 
 minilabs_andrea_bp = Blueprint('minilabs_andrea', __name__,
                          template_folder='templates',
@@ -9,5 +9,5 @@ minilabs_andrea_bp = Blueprint('minilabs_andrea', __name__,
 @minlabs_andrea_bp.route('/', methods=["GET", "POST"])
 def fibonacci():
     if request.form:
-        return render_template("myfibonacci.html", fibonacci=Fibonacci(int(request.form.get("series"))))
-    return render_template("myfibonacci.html", fibonacci=Fibonacci(2))
+        return render_template("myfibonacci.html", fibonacci=Exponential(int(request.form.get("series"))))
+    return render_template("myfibonacci.html", fibonacci=Exponential(2))

@@ -1,12 +1,12 @@
 """Fibonacci algorithm contained within a class """
 
 
-class Fibonacci:
+class Exponential:
     """Initializer of class takes series parameter and returns Class Objectg"""
     def __init__(self, series):
         """Built in validation and exception"""
-        if series < 2 or series > 100:
-            raise ValueError("Series must be between 2 and 100")
+        if series < 2 or series > 20:
+            raise ValueError("Series must be between 2 and 20")
         self._series = series
         self._list = []
         self._dict = {}
@@ -20,10 +20,10 @@ class Fibonacci:
     """Algorithm for building Fibonacci sequence, this id called from __init__"""
     def calc_series(self):
         limit = self._series
-        f = [0, 1]  # fibonacci starting array/list
+        f = [1, 2]  # fibonacci starting array/list
         while limit > 0:
             self.set_data(f[0])
-            f = [f[1], f[0] + f[1]]
+            f = [f[1], f[1] * f[1]]
             limit -= 1
 
     """Method/Function to set Fibonacci data: list, dict, and dictID are instance variables of Class"""
@@ -53,7 +53,7 @@ class Fibonacci:
 # Tester Code
 if __name__ == "__main__":
     '''Value for testing'''
-    n = 20
+    n = 6
     '''Constructor of Class object'''
     fibonacci = Fibonacci(n)
 
