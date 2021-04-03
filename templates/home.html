@@ -64,7 +64,7 @@ body {
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 99;
 }
 
 .dropdown-content a {
@@ -88,10 +88,16 @@ body {
 
 {% block content %}
 <body>
-<div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
+<!--<div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
     <a href="#home" class="w3-bar-item w3-button">Home</a>
 
-    <div class="w3-right w3-hide-small">
+    <div class="w3-bar w3-right w3-hide-small">
+        <a href="/" class="w3-bar-item w3-button">Home</a>
+        <a href="groc" class="w3-bar-item w3-button">Grocery</a>
+        <a href="books" class="w3-bar-item w3-button">Books</a>
+        <a href="cafe" class="w3-bar-item w3-button">Cafes</a>
+        <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a> -->
+    <div class="navbar">
         <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="groc" class="w3-bar-item w3-button">Grocery</a>
         <a href="books" class="w3-bar-item w3-button">Books</a>
@@ -109,12 +115,6 @@ body {
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </div>
 
 <!--Here is where we start the homepage -->
