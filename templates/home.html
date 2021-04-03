@@ -15,25 +15,106 @@
 </head>
 {% endblock %}
 
+<!--Navbar -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 0.9px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
 {% block content %}
 <body>
-
-<!--Navbar -->
 <div class="w3-top w3-bar w3-black w3-padding w3-card w3-wide">
     <a href="#home" class="w3-bar-item w3-button">Home</a>
 
     <div class="w3-right w3-hide-small">
-    <a href="/" class="w3-bar-item w3-button">Home</a>
-    <a href="groc" class="w3-bar-item w3-button">Grocery</a>
-    <a href="books" class="w3-bar-item w3-button">Books</a>
-    <a href="cafe" class="w3-bar-item w3-button">Cafes</a>
-    <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a>
-    <a href = "/minilabs_shreya/prime_numbers">Shreya Minilab</a>
-    <a href = "/minilabs_andrea/myfibonacci">Andrea Minilab</a>
-    <a href = "/ryan/odd">Ryan Minilab</a>
-    <a href = "/minilabs_diane/fib">Diane Minilab</a>
-
-</div>
+        <a href="/" class="w3-bar-item w3-button">Home</a>
+        <a href="groc" class="w3-bar-item w3-button">Grocery</a>
+        <a href="books" class="w3-bar-item w3-button">Books</a>
+        <a href="cafe" class="w3-bar-item w3-button">Cafes</a>
+        <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a>
+        <div class="dropdown">
+            <button class="dropbtn">Mini-Lab #1
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href = "/minilabs_shreya/prime_numbers">Shreya</a>
+                <a href = "/minilabs_andrea/myfibonacci">Andrea</a>
+                <a href = "/ryan/odd">Ryan</a>
+                <a href = "/minilabs_diane/fib">Diane</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 
 <!--Here is where we start the homepage -->
