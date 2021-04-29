@@ -7,22 +7,22 @@
     <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
         <!-- Title -->
         <div class="col-12" style="text-align: center;">
-            <h1><strong>5 cubed to the n series in Python</strong></h1>
+            <h1><strong>Cafe Recommendations</strong></h1>
         </div>
 
         <!-- Input and Content -->
         <div class="jumbotron text-center row">
             <div class="col-md-6">
-                <h3>Type the nth number in the 5^3n sequence?</h3>
+                <h3>How many Cafe recommendations would you like? (up to 5)</h3>
                 <img class="img-responsive py-3" src="/static/assets/Fibonacci_spiral.svg" alt="" width="25%" height="Auto">
                 <form id="fibForm" action="/minilabs_diane/fib" method="POST" >
-                    <input name="series" id="series" type="number" min="2" max="100" >
+                    <input name="series" id="series" type="number" min="2" max="5" >
                     <button>Go!</button>
                 </form>
             </div>
 
             <div class="col-md-6">
-                <h3>5 cubed to the n series for {{cubed.series}}</h3>
+                <h3>Cafe Recommendations (listed in order of popularity): {{cubed.series}}</h3>
                 <!-- Number, List table -->
                 <table class="mx-auto">
                     <tr>
@@ -38,14 +38,26 @@
         </div>
 
         <!-- Sequence -->
-        <div class="col-12" style="text-align: left; ">
+        <!-- <div class="col-12" style="text-align: left; "> -->
             <!-- Series -->
-            <h3>5 Cubed to the n build up for series: {{cubed.series}} number: {{cubed.number}}</h3>
+            <!-- <h3>5 Cubed to the n build up for series: {{cubed.series}} number: {{cubed.number}}</h3>
             <div class="overflow-auto" style="height: 200px">
                 {% for i in range(cubed.series) %}
                 <h5>{{cubed.get_sequence(i)}}</h5>
                 {% endfor %}
-            </div>
+            </div> -->
+        <!-- Cafe recc -->
+        <div class="col-12" style="text-align: left; ">
+        <!-- matching -->
+            <h3>Match the numbers to the Cafe name :)</h3>
+            <h3>Featured: {{cubed.number}}</h3>
+        <div class="overflow-auto" style="height: 200px">
+            <p>1: Cafe A
+            <p>5: Cafe B</p>
+            <p>125: Cafe C</p>
+            <p>1953125: Cafe D</p>
+            <p>7450580596923828125: Cafe E</p>
+        </div>
     </div>
     </div>
     <h1 style="font-size: 30px; color:black;">Binary Point</h1>
