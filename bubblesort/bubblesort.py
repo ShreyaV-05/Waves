@@ -9,9 +9,15 @@ def find_type(inp):
             string.append(x)
         if type(x) == chr:
             chara.append(x)
-    bubblestringsort(string)
-    bubblecharasort(chara)
-    bubbleintsort(num)
+        if type(inp) == int:
+            bubblestringsort(num)
+            print (num)
+        if type(inp) == str:
+            bubblestringsort(string)
+            print(string)
+        if type(inp) == chara:
+            bubblestringsort(chara)
+            print(chara)
 
 def bubbleintsort(sort):
     n=len(sort)
