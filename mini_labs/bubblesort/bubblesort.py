@@ -20,5 +20,18 @@ for y in string: #if string find length of each string and sort depending on len
     sort.append(z)
 for a in chara: #if char find ascii value and sort depending on asci value
     b = sort.append(ord(a))
+def bubbleSort(sort):
 
+
+    # Traverse through all array elements
+    for i in range():
+
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+
+            # traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if arr[j] > arr[j+1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
