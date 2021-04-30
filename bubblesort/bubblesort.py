@@ -5,18 +5,24 @@ def find_type(inp):
     for x in inp:#figure out what type of input
         if type(x) == int:
             num.append(x)
+            print(1)
         elif type(x) == str:
             string.append(x)
+            print(2)
         elif type(x) == chr:
             chara.append(x)
-    if type(inp) == int:
+            print(3)
+    if len(num)==1:
         bubblestringsort(num)
+        print(4)
         print (num)
-    elif type(inp) == str:
+    elif len(string)==1:
         bubblestringsort(string)
+        print(5)
         print(string)
-    elif type(inp) == chara:
+    elif len(chara)==1:
         bubblestringsort(chara)
+        print(6)
         print(chara)
 
 def bubbleintsort(sort):
