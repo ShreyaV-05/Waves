@@ -1,14 +1,3 @@
-fr = input("Enter your first input: ")
-se = input("Enter your second input: ")
-th = input("Enter your third input: ")
-fo = input("Enter your fourth input: ")
-fi = input("Enter your fifth input: ")
-inp=[fr,se,th,fo,fi]
-find_type(inp)
-num=[]
-string=[]
-chara=[]
-
 def find_type(inp):
     for x in inp:#figure out what type of input
         if type(x) == int:
@@ -19,16 +8,8 @@ def find_type(inp):
             chara.append(x)
     bubblestringsort(string)
     bubblecharasort(chara)
-    bubbleintsort(int)
-    print ("Sorted input is:")
+    bubbleintsort(num)
 
-"""
-for y in string: #if string find length of each string and sort depending on length
-    z = len(y)
-    sort.append(z)
-for u in chara: #if char find ascii value and sort depending on asci value
-    v = sort.append(ord(u))
-"""
 def bubbleintsort(sort):
     n=len(sort)
     # Traverse through all array elements
@@ -61,3 +42,15 @@ def bubblecharasort(sort):
             # than the next element
             if sort[ord(j)] > sort[ord(j+1)] :
                 sort[ord(j)], sort[ord(j+1)] = sort[ord(j+1)], sort[ord(j)]
+fr = input("Enter your first input: ")
+se = input("Enter your second input: ")
+th = input("Enter your third input: ")
+fo = input("Enter your fourth input: ")
+fi = input("Enter your fifth input: ")
+inp=[fr,se,th,fo,fi]
+find_type(inp)
+num=[]
+string=[]
+chara=[]
+
+
