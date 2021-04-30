@@ -1,34 +1,48 @@
-def find_type(inp):
+def find_type():
+    s='n'
+    c='n'
+    n='n'
     num=[]
     string=[]
     chara=[]
-    for x in inp:#figure out what type of input
-        if type(x) == int:
-            num.append(x)
-            print(1)
-        elif type(x) == str:
-            string.append(x)
-            print(2)
-        elif type(x) == chr:
-            chara.append(x)
-            print(3)
-    if len(num)==1:
-        bubblestringsort(num)
-        print(4)
-        print (num)
-    elif len(string)==1:
+    s = input("Will you be inputting strings to bubble sort (type n for no and y for yes): ")
+    c = input("Will you be inputting characters to bubble sort (type n for no and y for yes):")
+    n = input("Will you be inputting integers to bubble sort (type n for no and y for yes):")
+    if s != 'n':
+        fr = input("Enter your first string: ")
+        se = input("Enter your second string: ")
+        th = input("Enter your third string: ")
+        fo = input("Enter your fourth string: ")
+        fi = input("Enter your fifth string: ")
+        string=[fr,se,th,fo,fi]
         bubblestringsort(string)
-        print(5)
+        print(1)
         print(string)
-    elif len(chara)==1:
-        bubblestringsort(chara)
-        print(6)
-        print(chara)
+    elif c != 'n':
+            fr = input("Enter your first character: ")
+            se = input("Enter your second character: ")
+            th = input("Enter your third character: ")
+            fo = input("Enter your fourth character: ")
+            fi = input("Enter your fifth character: ")
+            chara=[fr,se,th,fo,fi]
+            bubblecharasort(chara)
+            print(2)
+            print(chara)
+    elif n != 'n':
+            fr = input("Enter your first integer: ")
+            se = input("Enter your second integer: ")
+            th = input("Enter your third integer: ")
+            fo = input("Enter your fourth integer: ")
+            fi = input("Enter your fifth integer: ")
+            num=[fr,se,th,fo,fi]
+            bubbleintsort(num)
+            print(3)
+            print(num)
 
 def bubbleintsort(sort):
     n=len(sort)
     # Traverse through all array elements
-    for i in range(n-1):
+    for i in range(n):
         # Last i elements are already in place
         for j in range(0, n-i-1):
             # traverse the array from 0 to n-i-1
@@ -39,7 +53,7 @@ def bubbleintsort(sort):
 def bubblestringsort(sort):
     # Traverse through all array elements
     n=len(sort)
-    for i in range(n-1):
+    for i in range(n):
         # Last i elements are already in place
         for j in range(0, n-i-1):
             # traverse the array from 0 to n-i-1
@@ -49,7 +63,7 @@ def bubblestringsort(sort):
                 sort[j], sort[j+1] = sort[j+1], sort[j]
 def bubblecharasort(sort):
     n=len(sort)
-    for i in range(n-1):
+    for i in range(n):
         # Last i elements are already in place
         for j in range(0, n-i-1):
             # traverse the array from 0 to n-i-1
@@ -57,13 +71,8 @@ def bubblecharasort(sort):
             # than the next element
             if ord(sort[j]) > ord(sort[j+1]) :
                 sort[j], sort[j+1] = sort[j+1], sort[j]
-fr = input("Enter your first input: ")
-se = input("Enter your second input: ")
-th = input("Enter your third input: ")
-fo = input("Enter your fourth input: ")
-fi = input("Enter your fifth input: ")
-inp=[fr,se,th,fo,fi]
-find_type(inp)
+
+find_type()
 
 
 
