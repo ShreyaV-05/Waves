@@ -7,7 +7,8 @@ inp=[fr,se,th,fo,fi]
 num=[]
 string=[]
 chara=[]
-def find_type():
+find_type(inp)
+def find_type(inp):
     for x in inp:#figure out what type of input
         if type(x) == int:
             num.append(x)
@@ -19,12 +20,6 @@ def find_type():
     bubblecharasort(chara)
     bubbleintsort(int)
     print ("Sorted input is:")
-    for i in range(len(string)):
-        print ("%d" %string[i])
-    for i in range(len(string)):
-        print ("%d" %string[i])
-    for i in range(len(string)):
-        print ("%d" %string[i])
 
 """
 for y in string: #if string find length of each string and sort depending on length
