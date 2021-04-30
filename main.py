@@ -1,5 +1,8 @@
 
 from flask import Flask, render_template
+
+from bubblesort.app import bubblesort_bp
+
 """
 #blueprints for books
 from books.app import books_bp
@@ -15,6 +18,8 @@ from minilabs_andrea.app import minilabs_andrea_bp
 from minilabs_shreya.app import minilabs_shreya_bp
 from minilabs_diane.app import minilabs_diane_bp
 from minilabs_ryan.app import minilabs_ryan_bp
+from bubblesort.app import bubblesort_bp
+
 
 app = Flask(__name__)
 """
@@ -27,6 +32,7 @@ app.register_blueprint(minilabs_shreya_bp, url_prefix='/minilabs_shreya')
 app.register_blueprint(minilabs_andrea_bp, url_prefix='/minilabs_andrea')
 app.register_blueprint(minilabs_diane_bp, url_prefix='/minilabs_diane')
 app.register_blueprint(minilabs_ryan_bp, url_prefix='/ryan')
+app.register_blueprint(bubblesort_bp, url_prefix='/bubblesort')
 
 
 

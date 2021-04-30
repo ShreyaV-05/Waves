@@ -1,14 +1,14 @@
 from flask import Blueprint, render_template, request
 
-from minilabs_diane.minilab_fib import Cubed
+from bubblesort.bubblesort import Cubed
 
-minilabs_diane_bp = Blueprint('minilabs_diane', __name__,
+bubblesort_bp = Blueprint('bubblesort', __name__,
                               template_folder='templates',
                               static_folder='static', static_url_path='assets')
 
 
-@minilabs_diane_bp.route('/fib', methods=["GET", "POST"])
-def fibonacci():
+@bubblesort_bp.route('/bubsort', methods=["GET", "POST"])
+def bubblesort():
     if request.form:
-        return render_template("fib.html", cubed=Cubed(int(request.form.get("series"))))
-    return render_template("fib.html", cubed=Cubed(2))
+        return render_template("bubsort.html", cubed=Cubed(int(request.form.get("series"))))
+    return render_template("bubsort", cubed=Cubed(2))
