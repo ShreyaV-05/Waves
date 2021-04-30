@@ -4,10 +4,11 @@ th = input("Enter your third input: ")
 fo = input("Enter your fourth input: ")
 fi = input("Enter your fifth input: ")
 inp=[fr,se,th,fo,fi]
+find_type(inp)
 num=[]
 string=[]
 chara=[]
-find_type(inp)
+
 def find_type(inp):
     for x in inp:#figure out what type of input
         if type(x) == int:
