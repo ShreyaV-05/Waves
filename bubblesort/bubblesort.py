@@ -1,4 +1,7 @@
 def find_type(inp):
+    num=[]
+    string=[]
+    chara=[]
     for x in inp:#figure out what type of input
         if type(x) == int:
             num.append(x)
@@ -49,8 +52,6 @@ fo = input("Enter your fourth input: ")
 fi = input("Enter your fifth input: ")
 inp=[fr,se,th,fo,fi]
 find_type(inp)
-num=[]
-string=[]
-chara=[]
+
 
 
