@@ -50,6 +50,7 @@ def bubbleintsort(sort):
             # than the next element
             if sort[j] > sort[j+1] :
                 sort[j], sort[j+1] = sort[j+1], sort[j]
+
 def bubblestringsort(sort):
     # Traverse through all array elements
     n=len(sort)
