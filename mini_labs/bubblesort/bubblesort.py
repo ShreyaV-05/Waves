@@ -14,5 +14,5 @@ for x in inp:#figure out what type of input
         string.append(x)
     if type(x) == chr:
         chara.append(x)
-for y in string:#if string find lenth of each string and sort depending on length
+for y in string:#if string find length of each string and sort depending on length
     #if char find ascii value and sort depending on asci value
