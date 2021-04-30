@@ -1,15 +1,7 @@
-fr = input("Enter your first input: ")
-se = input("Enter your second input: ")
-th = input("Enter your third input: ")
-fo = input("Enter your fourth input: ")
-fi = input("Enter your fifth input: ")
-inp=[fr,se,th,fo,fi]
-find_type(inp)
-num=[]
-string=[]
-chara=[]
-
 def find_type(inp):
+    num=[]
+    string=[]
+    chara=[]
     for x in inp:#figure out what type of input
         if type(x) == int:
             num.append(x)
@@ -17,18 +9,16 @@ def find_type(inp):
             string.append(x)
         if type(x) == chr:
             chara.append(x)
-    bubblestringsort(string)
-    bubblecharasort(chara)
-    bubbleintsort(int)
-    print ("Sorted input is:")
+        if type(inp) == int:
+            bubblestringsort(num)
+            print (num)
+        if type(inp) == str:
+            bubblestringsort(string)
+            print(string)
+        if type(inp) == chara:
+            bubblestringsort(chara)
+            print(chara)
 
-"""
-for y in string: #if string find length of each string and sort depending on length
-    z = len(y)
-    sort.append(z)
-for u in chara: #if char find ascii value and sort depending on asci value
-    v = sort.append(ord(u))
-"""
 def bubbleintsort(sort):
     n=len(sort)
     # Traverse through all array elements
@@ -49,8 +39,8 @@ def bubblestringsort(sort):
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if sort[len(j)] > sort[len(j+1)] :
-                sort[len(j)], sort[len(j+1)] = sort[len(j+1)], sort[len(j)]
+            if len(sort[j]) > len(sort[j+1]):
+                sort[j], sort[j+1] = sort[j+1], sort[j]
 def bubblecharasort(sort):
     n=len(sort)
     for i in range(n-1):
@@ -59,5 +49,17 @@ def bubblecharasort(sort):
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if sort[ord(j)] > sort[ord(j+1)] :
-                sort[ord(j)], sort[ord(j+1)] = sort[ord(j+1)], sort[ord(j)]
+            if ord(sort[j]) > ord(sort[j+1]) :
+                sort[j], sort[j+1] = sort[j+1], sort[j]
+fr = input("Enter your first input: ")
+se = input("Enter your second input: ")
+th = input("Enter your third input: ")
+fo = input("Enter your fourth input: ")
+fi = input("Enter your fifth input: ")
+inp=[fr,se,th,fo,fi]
+find_type(inp)
+
+
+
+
+
