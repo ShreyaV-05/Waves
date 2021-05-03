@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 {% extends "home.html" %}
-{{ super() }}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}P3 Waves Bubble sort{% endblock %}</title>
-</head>
+
 {% block content %}
 <body  style="margin-left: 15px">
+<p>hi</p>
 <a href="{{ url_for('bubblesort_bp.bubblesort') }}">Bubble Sort Lab</a>
 </body>
 {% endblock %}
