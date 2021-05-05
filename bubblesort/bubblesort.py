@@ -50,6 +50,7 @@ def bubbleintsort(sort):
             # than the next element
             if sort[j] > sort[j+1] :
                 sort[j], sort[j+1] = sort[j+1], sort[j]
+    return sort
 
 def bubblestringsort(sort):
     # Traverse through all array elements
@@ -73,7 +74,7 @@ def bubblecharasort(sort):
             if ord(sort[j]) > ord(sort[j+1]) :
                 sort[j], sort[j+1] = sort[j+1], sort[j]
 
-find_type()
+#find_type()
 
 
 

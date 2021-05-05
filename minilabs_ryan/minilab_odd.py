@@ -27,7 +27,7 @@ class Odd:
 
 
 
-    """Method/Function to set prime numbers data: list, dict, and dictID are instance variables of Class"""
+    """Method/Function to set odd numbers data: list, dict, and dictID are instance variables of Class"""
     def set_data(self, num):
         self._list.append(num)
         self._dict[self._dictID] = self._list.copy()
