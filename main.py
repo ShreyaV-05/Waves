@@ -41,6 +41,10 @@ def home():
     #Flask import uses Jinga to render HTML
     return render_template("home.html")
 
+@app.route("/cafe")
+def cafe_route():
+    return render_template("cafe.html")
+
 @app.route("/SEARCHBAR")
 def SEARCHBAR_route():
     return render_template("SEARCHBAR.html")
