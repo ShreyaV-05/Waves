@@ -39,7 +39,7 @@ def find_type():
             print(3)
             print(num)
 
-def bubbleintsort(sort):
+def bubblesortall(sort):
     n=len(sort)
     # Traverse through all array elements
     for i in range(n):
@@ -75,7 +75,13 @@ def bubblecharasort(sort):
                 sort[j], sort[j+1] = sort[j+1], sort[j]
 
 #find_type()
-
+if __name__ == "__main__":
+    bubbleone = [35, 41, 67, 19, 3, 2, 1]
+    print(bubblesortall(bubbleone))
+    bubbletwo = ["diane", "andrea", "ryan", "shreya", "dan", "dv"]
+    print(bubblesortall(bubbletwo))
+    bubblethree = ["a", "^", "#", "A", "b", "!", "B", "z"]
+    print(bubblesortall(bubblethree))
 
 
 

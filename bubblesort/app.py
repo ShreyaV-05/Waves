@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 
 #from bubblesort.bubblesort import Cubed
-from bubblesort.bubblesort import bubbleintsort
+from bubblesort.bubblesort import bubblesortall
 
 bubblesort_bp = Blueprint('bubblesort', __name__,
                               template_folder='templates',
@@ -19,10 +19,10 @@ def bubblesort():
             string_used = 'user_input' + str(b)
             user_input = request.form.get(string_used)
             print(user_input)
-            all_list.append(int(user_input))
+            all_list.append(user_input)
             b = b + 1
 
         print(all_list)
 
-        return render_template("bubsort.html" , output_list = bubbleintsort(all_list))
+        return render_template("bubsort.html" , output_list = bubblesortall(all_list))
     return render_template("bubsort.html")
