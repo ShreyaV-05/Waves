@@ -6,6 +6,10 @@ import projects
 books_bp = Blueprint('books', __name__,
                      template_folder='templates',
                      static_folder='static', static_url_path='assets')
+@books_bp.route('/')
+def bookstore():
+    return render_template("store.html")
+"""
 books_bp = Flask(__name__)
 books_bp.config['SECRET_KEY'] = 'Books'
 books_bp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -50,8 +54,9 @@ db.create_all()  # creates books.db file
 @books_bp.route('/')
 def index():
     return ""
+"""
 """ASK ANDREW WHAT THIS DOES AND WOULD NAVBAR BE HERE OR IN GEN HOME PAGE HMTL??"""
-
+"""
 @books_bp.route("/rec/", methods=['GET', 'POST'])
 def recs_route():
     if request.method == 'POST':
@@ -149,3 +154,4 @@ def genretemp_route_2():
 @books_bp.route("/biblio/")
 def genretemp_route_3():
     return render_template("biblio.html", projects=projects.setup(), genresep_table=biblio_pg, recs_table=biblio_recs)
+"""

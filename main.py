@@ -3,9 +3,10 @@ from flask import Flask, render_template
 
 from bubblesort.app import bubblesort_bp
 
-"""
+
 #blueprints for books
 from books.app import books_bp
+"""
 #blueprints for groc
 from groc.app import groc_bp
 #blueprints for cafe
@@ -26,8 +27,9 @@ app = Flask(__name__)
 app.register_blueprint(groc_bp, url_prefix='/groc')
 app.register_blueprint(cafe_bp, url_prefix='/cafe')
 app.register_blueprint(movie_bp, url_prefix='/movie')
-app.register_blueprint(books_bp, url_prefix='/books')
 """
+app.register_blueprint(books_bp, url_prefix='/books')
+
 app.register_blueprint(minilabs_shreya_bp, url_prefix='/minilabs_shreya')
 app.register_blueprint(minilabs_andrea_bp, url_prefix='/minilabs_andrea')
 app.register_blueprint(minilabs_diane_bp, url_prefix='/minilabs_diane')
