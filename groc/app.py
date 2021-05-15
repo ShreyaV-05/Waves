@@ -1,4 +1,5 @@
 from flask import Blueprint
+from flask import Flask, render_template, request
 
 groc_bp = Blueprint('groc', __name__,
                     template_folder='templates',
@@ -6,5 +7,5 @@ groc_bp = Blueprint('groc', __name__,
 
 
 @groc_bp.route('/')
-def index():
-    return ""
+def bookstore():
+    return render_template("groc.html")
