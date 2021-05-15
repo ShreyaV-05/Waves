@@ -1,4 +1,5 @@
 from flask import Blueprint
+from flask import Flask, render_template
 
 cafe_bp = Blueprint('cafe', __name__,
                     template_folder='templates',
@@ -6,5 +7,5 @@ cafe_bp = Blueprint('cafe', __name__,
 
 
 @cafe_bp.route('/')
-def index():
-    return ""
+def cafe():
+    return render_template("cafe.html")
