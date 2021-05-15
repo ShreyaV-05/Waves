@@ -17,9 +17,9 @@
 
 <!--Navbar -->
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -83,6 +83,32 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid red;
+}
 </style>
 </head>
 
@@ -101,7 +127,7 @@ body {
         <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="groc" class="w3-bar-item w3-button">Grocery</a>
         <a href="books" class="w3-bar-item w3-button">Books</a>
-        <a href="cafe" class="w3-bar-item w3-button">Cafes</a>
+        <a href="/cafe" class="w3-bar-item w3-button">Cafes</a>
         <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a>
         <div class="dropdown">
             <button class="dropbtn">Mini-Labs
@@ -115,6 +141,7 @@ body {
                 <a href = "/bubblesort/bubsort">Bubble Sort</a>
             </div>
         </div>
+        <a href="/SEARCHBAR" class="w3-bar-item w3-button">Search</a>
     </div>
 </div>
 
@@ -159,8 +186,23 @@ w3.slideshow(".slides", 1500);
         </form>
 
         <img src="https://ca-times.brightspotcdn.com/dims4/default/3e1b697/2147483647/strip/true/crop/2047x1151+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6e%2Fda%2Fd127804f28d9162242b0ec06a6da%2Fla-1553780834-zqm4alqim3-snap-image" class="w3-image" style="width:100%">
+
+        <!-- Here is how we reference a code source, and how to give credit -->
+            <p>
+                Code reference: W3Schools, (2021) HTML Tutorial (Version 1.0) [Source Code], https://www.w3schools.com/html/html_intro.asp
+            </p>
     </div>
 </div>
+
+<!-- Chat Box -->
+<script id="cid0020000281659567315" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 300px;height: 400px;">{"handle":"wavessupport","arch":"js","styles":{"a":"93E9BE","b":100,"c":"000000","d":"000000","k":"93E9BE","l":"93E9BE","m":"93E9BE","p":"10","q":"93E9BE","r":100,"pos":"br","cv":1,"cvfnt":"monospace, sans-serif","cvbg":"93e9be","cvw":75,"cvh":30,"cnrs":"0.35","ticker":1,"fwtickm":1}}</script>
+
+<!-- Bottom Nav Links -->
+<div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="/SEARCHBAR">Search</a>
+</div>
+
 </body>
 
 {% endblock %}
