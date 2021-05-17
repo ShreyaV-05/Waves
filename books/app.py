@@ -33,7 +33,7 @@ class genresep(db.Model):
         self.book = book
         self.descrip = descrip
 #rec books
-class recs(db.Model):
+class bookrecs(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     genre = db.Column(db.String(100))
     genrediff = db.Column(db.String(100))
@@ -54,14 +54,12 @@ class recs(db.Model):
 "Create Database"
 db.create_all()  # creates books.db file
 
-@books_bp.route('/')
-def index():
-    return ""
+
 """
 """ASK ANDREW WHAT THIS DOES AND WOULD NAVBAR BE HERE OR IN GEN HOME PAGE HMTL??"""
 """
-@books_bp.route("/rec/", methods=['GET', 'POST'])
-def recs_route():
+@books_bp.route("/bookrec/", methods=['GET', 'POST'])
+def bookrec_route():
     if request.method == 'POST':
         genre= request.form['genre']
         genrediff= request.form['genrediff']
@@ -70,7 +68,7 @@ def recs_route():
         descrip = request.form['descrip']
 
 
-        #  adding user into the rec database
+        #  adding user into the bookrec database
         new_rec = genre(genre=genre, genrediff=genrediff, book=book, author=author, descrip=descrip)
         db.session.add(new_rec)
         db.session.commit()
@@ -78,17 +76,17 @@ def recs_route():
         return render_template("bookrec.html", projects=projects.setup())
 
     return render_template("bookrec.html", projects=projects.setup())
-recs_recs = []
+book_recs = []
 rom_recs = []
 action_recs = []
 fantasy_recs = []
 biblio_recs = []
 
-def recs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+def bookrecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = recs.query.all()
     for rec in database:
         recs_dict = {'id':rec.id, 'genre': rec.genre, 'book': rec.book, 'descrip':rec.descrip}
-        recs_recs.append(recs_dict)
+        books_recs.append(recs_dict)
 
         #getting the value that corresponds with the key 'location'
         genre = recs_dict['genre']
