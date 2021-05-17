@@ -9,9 +9,7 @@ books_bp = Blueprint('books', __name__,
 @books_bp.route('/')
 def bookstore():
     return render_template("store.html")
-@books_bp.route('/')
-def bookrec():
-    return render_template("bookrec.html")
+
 """
 books_bp = Flask(__name__)
 books_bp.config['SECRET_KEY'] = 'Books'
