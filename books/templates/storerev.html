@@ -44,28 +44,26 @@ input[type=submit]:hover {
 <div class="container">
     <form method="POST" ID="myForm" action={{url_for('.storerev_route')}}>
 
-        <label for="genre">Genre</label>
-        <select id="genre" name="genre">
-            <option value="Romance">Romance</option>
-            <option value="Action">Action</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Bibliography">Bibliography</option>
+        <label for="storerev">Book Store</label>
+        <select id="storerev" name="storerev">
+            <option value="Artifact">Artifact Books</option>
+            <option value="Farenheit">Farenheit 451</option>
+            <option value="BAN">Barnes and Nobles</option>
+            <option value="Beach">Beach Town Books</option>
             <option value="Other">Other</option>
 
         </select>
 
-        <label for="genrediff">If Selected "Other" For Genre:</label>
-        <textarea id="genrediff" name="genrediff" placeholder="If another genre type in..." style="height:200px"></textarea>
 
-        <label for="book">Title of the Book</label>
-        <input type="text" id="book" name="book" placeholder="Title of the book">
+        <label for="storerevdiff">If selected "Other" for bookstore enter title of bookstore</label>
+        <textarea id="storerevdiff" name="storerevdiff" placeholder="Enter name of bookstore..." style="height:200px"></textarea>
 
 
-        <label for="author">Author</label>
-        <input type="text" id="author" name="author" placeholder="Name of the author">
+        <label for="revlocation">Only add location if different bookstore from choices</label>
+        <input type="text" id="revlocation" name="revlocation" placeholder="Enter location">
 
-        <label for="descrip">Synopsis</label>
-        <textarea id="descrip" name="descrip" placeholder="Short summary..."style="height:200px"> </textarea>
+        <label for="revdescrip">Review</label>
+        <textarea id="revdescrip" name="revdescrip" placeholder="Review..."style="height:200px"> </textarea>
 
         <input type="submit" value="Submit">
     </form>
