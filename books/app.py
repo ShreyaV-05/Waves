@@ -9,6 +9,9 @@ books_bp = Blueprint('books', __name__,
 @books_bp.route('/')
 def bookstore():
     return render_template("store.html")
+@books_bp.route('/')
+def bookrec():
+    return render_template("bookrec.html")
 """
 books_bp = Flask(__name__)
 books_bp.config['SECRET_KEY'] = 'Books'
@@ -72,9 +75,9 @@ def recs_route():
         db.session.add(new_rec)
         db.session.commit()
 
-        return render_template("rec.html", projects=projects.setup())
+        return render_template("bookrec.html", projects=projects.setup())
 
-    return render_template("rec.html", projects=projects.setup())
+    return render_template("bookrec.html", projects=projects.setup())
 recs_recs = []
 rom_recs = []
 action_recs = []
