@@ -52,10 +52,6 @@ class bookrecs(db.Model):
 "Create Database"
 db.create_all()  # creates books.db file
 
-
-"""
-"""ASK ANDREW WHAT THIS DOES AND WOULD NAVBAR BE HERE OR IN GEN HOME PAGE HMTL??"""
-"""
 @books_bp.route("/bookrec/", methods=['GET', 'POST'])
 def bookrec_route():
     if request.method == 'POST':
@@ -107,50 +103,17 @@ def bookrecs_map():  # mapping the front end to the backend, put in the function
             biblio_recs.append(recs_dict)
 
 
-genresep_pg = []
-rom_pg = []
-action_pg = []
-fantasy_pg = []
-biblio_pg = []
-
-
-def genresep_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
-    database = genresep.query.all()
-    for genre in database:
-        genresep_dict = {'id':genresep.id, 'genre': genresep.genre, 'book': genresep.book, 'descrip':genresep.descrip}
-        genresep_pg.append(genresep_dict)
-
-        #getting the value that corresponds with the key 'location'
-        genre = genresep_dict['genre']
-
-        #if it is rom
-        if genre == 'Romance':
-            #append to rom books
-            rom_pg.append(genresep_dict)
-        #if it is action
-        if genre == 'Action':
-            #append to action books
-            action_pg.append(genresep_dict)
-        #if it is fantasy
-        if genre == 'Fantasy':
-            #append to fantasy books
-            fantasy_pg.append(genresep_dict)
-        #if it is biblio
-        if genre == 'Bibliography':
-            #append to bibliography books
-            biblio_pg.append(genresep_dict)
-
 
 @books_bp.route("/romance/")
 def genretemp_route():
-    return render_template("romance.html", projects=projects.setup(), genresep_table=rom_pg, recs_table=rom_recs)
+    return render_template("romance.html", projects=projects.setup(), recs_table=rom_recs)
 @books_bp.route("/action/")
 def genretemp_route_1():
-    return render_template("action.html", projects=projects.setup(), genresep_table=action_pg, recs_table=action_recs)
+    return render_template("action.html", projects=projects.setup(), recs_table=action_recs)
 @books_bp.route("/fantasy/")
 def genretemp_route_2():
-    return render_template("fantasy.html", projects=projects.setup(), genresep_table=fantasy_pg, recs_table=fantasy_recs)
+    return render_template("fantasy.html", projects=projects.setup(), recs_table=fantasy_recs)
 @books_bp.route("/biblio/")
 def genretemp_route_3():
-    return render_template("biblio.html", projects=projects.setup(), genresep_table=biblio_pg, recs_table=biblio_recs)
+    return render_template("biblio.html", projects=projects.setup(), recs_table=biblio_recs)
 """
