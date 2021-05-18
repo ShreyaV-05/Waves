@@ -18,18 +18,7 @@ books_bp.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'  # telling pro
 db = SQLAlchemy(books_bp)  # db defined here
 Bootstrap(books_bp)
 records = []
-#og books on genre pages
-class genresep(db.Model):
-    id = db.Column(db.Integer(), primary_key=True)
-    genre = db.Column(db.String(100))
-    book = db.Column(db.String(500))
-    descrip = db.Column(db.String(1000))
-
-    # constructor that initializes the database
-    def __init__(self, genre, book, descrip):
-        self.genre = genre
-        self.book = book
-        self.descrip = descrip
+--------------------------------------------------------------------------------------------------------------------
 #rec books
 class bookrecs(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -46,35 +35,59 @@ class bookrecs(db.Model):
         self.book = book
         self.author = author
         self.descrip = descrip
+--------------------------------------------------------------------------------------------------------------------
+#rev books
+class bookrevs(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    genre = db.Column(db.String(100))
+    genrediff = db.Column(db.String(100))
+    book = db.Column(db.String(1000))
+    author = db.Column(db.String(500))
+    review = db.Column(db.String(1000))
+
+    # constructor that initializes the database
+    def __init__(self, genre,genrediff, book, author,review):
+        self.genre = genre
+        self.genrediff = genrediff
+        self.book = book
+        self.author = author
+        self.review = review
+--------------------------------------------------------------------------------------------------------------------
+#rec store
+class storerecs(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    storerec = db.Column(db.String(1000))
+    reclocation = db.Column(db.String(1000))
+    recdescrip = db.Column(db.String(1000))
 
 
+    # constructor that initializes the database
+    def __init__(self, storerec,reclocation, recdescrip):
+        self.storerec = storerec
+        self.reclocation = reclocation
+        self.recdescrip = recdescrip
+--------------------------------------------------------------------------------------------------------------------
+#rev store
+class storerevs(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    storerev = db.Column(db.String(1000))
+    storerevdiff = db.Column(db.String(1000))
+    revlocation = db.Column(db.String(1000))
+    revreview = db.Column(db.String(1000))
 
+
+    # constructor that initializes the database
+    def __init__(self, storerev,storerevdiff, revlocation, recreview):
+        self.storerev = storerev
+        self.storerevdiff = storerevdiff
+        self.revlocation = revlocation
+        self.revreview = revreview
+
+
+--------------------------------------------------------------------------------------------------------------------
 "Create Database"
 db.create_all()  # creates books.db file
-
-@books_bp.route("/bookrec/", methods=['GET', 'POST'])
-def bookrec_route():
-    if request.method == 'POST':
-        genre= request.form['genre']
-        genrediff= request.form['genrediff']
-        book = request.form['book']
-        author = request.form['author']
-        descrip = request.form['descrip']
-
-
-        #  adding user into the bookrec database
-        new_rec = genre(genre=genre, genrediff=genrediff, book=book, author=author, descrip=descrip)
-        db.session.add(new_rec)
-        db.session.commit()
-
-        return render_template("bookrec.html", projects=projects.setup())
-
-    return render_template("bookrec.html", projects=projects.setup())
-book_recs = []
-rom_recs = []
-action_recs = []
-fantasy_recs = []
-biblio_recs = []
+--------------------------------------------------------------------------------------------------------------------
 
 def bookrecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = recs.query.all()
@@ -101,19 +114,74 @@ def bookrecs_map():  # mapping the front end to the backend, put in the function
         if genre == 'Bibliography':
             #append to bibliography books
             biblio_recs.append(recs_dict)
+        #if it is other
+        if genre == 'Other':
+            #append to other books
+            other_recs.append(recs_dict)
+--------------------------------------------------------------------------------------------------------------------
+def bookrevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = revs.query.all()
+    for rev in database:
+        revs_dict = {'id':rev.id, 'genre': rev.genre, 'book': rev.book, 'review':rev.review}
+        books_revs.append(revs_dict)
 
+        #getting the value that corresponds with the key 'genre'
+        genre = revs_dict['genre']
 
+        #if it is rom
+        if genre == 'Romance':
+            #append to rom books
+            rom_revs.append(revs_dict)
+        #if it is action
+        if genre == 'Action':
+            #append to action books
+            action_revs.append(revs_dict)
+        #if it is fantasy
+        if genre == 'Fantasy':
+            #append to fantasy books
+            fantasy_revs.append(revs_dict)
+        #if it is biblio
+        if genre == 'Bibliography':
+            #append to bibliography books
+            biblio_revs.append(revs_dict)
+        #if it is other
+        if genre == 'Other':
+            #append to other books
+            other_revs.append(revs_dict)
+--------------------------------------------------------------------------------------------------------------------
+def storerecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = recs.query.all()
+    for rec in database:
+        recs_dict = {'id':rec.id,'store': rec.storerec,'location': rec.reclocation, 'descrip':rec.recdescrip }
+        store_recs.append(recs_dict)
+        
+def storerevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = revs.query.all()
+    for rev in database:
+        revs_dict = {'id':rev.id,'store': rev.storerev,'different': rev.storerevdiff, 'location':rev.revlocation, 'review':rev.revreview }
+        
+        #getting the value that corresponds with the key 'store'
+        store = revs_dict['store']
 
-@books_bp.route("/romance/")
-def genretemp_route():
-    return render_template("romance.html", projects=projects.setup(), recs_table=rom_recs)
-@books_bp.route("/action/")
-def genretemp_route_1():
-    return render_template("action.html", projects=projects.setup(), recs_table=action_recs)
-@books_bp.route("/fantasy/")
-def genretemp_route_2():
-    return render_template("fantasy.html", projects=projects.setup(), recs_table=fantasy_recs)
-@books_bp.route("/biblio/")
-def genretemp_route_3():
-    return render_template("biblio.html", projects=projects.setup(), recs_table=biblio_recs)
+        #if it is Artifact
+        if store == 'Artifact':
+            #append to Artifact store
+            art_revs.append(revs_dict)
+        #if it is Farenheit
+        if store == 'Farenheit':
+            #append to Farenheit store
+            faren_revs.append(revs_dict)
+        #if it is ban
+        if store == 'BAN':
+            #append to ban store
+            ban_revs.append(revs_dict)
+        #if it is beach
+        if store == 'Beach':
+            #append to beach store
+            beach_revs.append(revs_dict)
+        #if it is other
+        if store == 'Other':
+            #append to other store
+            other_revs.append(revs_dict)
+
 """
