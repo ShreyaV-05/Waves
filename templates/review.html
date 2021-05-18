@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--review_info = {'id': user.id, 'store': user.store, 'name': user.name, 'user': user.user, 'stars': user.stars, 'description': user.description}-->
+{% for dictionary in review %}
+
+{% set id = dictionary["id"] %}
+{% set store = dictionary["store"] %}
+{% set name = dictionary["name"] %}
+{% set user = dictionary["user"] %}
+{% set time = dictionary["time"] %}
+{% set stars = dictionary["stars"] %}
+{% set description = dictionary["description"] %}
+
+{{store}} <br>
+{{name}} <br>
+{{user}} <br>
+{{stars}} <br>
+{{description}} <br><br>
+
+{% endfor %}
+</body>
+</html>

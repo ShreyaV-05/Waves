@@ -80,6 +80,10 @@ def home():
 def SEARCHBAR_route():
     return render_template("SEARCHBAR.html")
 
+@app.route("/review")
+def review_route():
+    return render_template("review.html", review=review_list)
+
 if __name__ == "__main__":
     #runs the application on the repl development server/raspberry pi
     app.run(debug=True, port='8080', host='127.0.0.1')
