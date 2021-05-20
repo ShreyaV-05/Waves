@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "soon_base.html" %}
+{% extends "recommend_base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block style %}
@@ -37,14 +37,14 @@ endblock
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-10" style="text-align: center;">
-        <h1>Coming Soon</h1>
+        <h1>Recommend a New Movie Theatre to see reviews about!</h1>
     </div>
 </div>
 <table>
     <tr>
         <th>Name of Movie Theatre</th>
         <th>Location</th>
-        <th>Price</th>
+        <th>Price Rating</th>
     </tr>
     <!-- Loop through rows in table -->
     {% for row in table %}
