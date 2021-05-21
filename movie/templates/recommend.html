@@ -42,6 +42,7 @@ endblock
 </div>
 <table>
     <tr>
+        <th>Your Email</th>
         <th>Name of Movie Theatre</th>
         <th>Location</th>
         <th>Price Rating</th>
@@ -49,11 +50,11 @@ endblock
     <!-- Loop through rows in table -->
     {% for row in table %}
     <tr>
-        <th>{{ row['cuisine'] }}</th>
-        <th>{{ row['restaurant'] }}</th>
+        <th>{{ row['email'] }}</th>
+        <th>{{ row['theatre'] }}</th>
         <th>{{ row['location'] }}</th>
         <th>{{ row['price'] }}</th>
-        <th><form action={{url_for('.delete')}} method="post"><input id="cuisine_id" name="item_id" value={{row['cuisine']}} style="visibility: hidden; width: 0px;"><input type="submit" value="Delete"></form></th>
+        <th><form action={{url_for('.delete')}} method="post"><input id="email_id" name="item_id" value={{row['email']}} style="visibility: hidden; width: 0px;"><input type="submit" value="Delete"></form></th>
     </tr>
     {% endfor %}
 </table>
@@ -65,10 +66,11 @@ endblock
 
     <div class="row courses-buttons justify-content-center">
 
-        <form class="form-append" method="POST" action="/soon/">
+        <form class="form-append" method="POST" action="/recommend/">
             {{ form.hidden_tag() }}
             <h2 class="form-signin-heading">Enter movie theatres you would like to see be added into the website in the future...</h2>
-            {{wtf.form_field(form.movietheatre)}}
+            {{wtf.form_field(form.email)}}
+            {{wtf.form_field(form.theatre)}}
             {{wtf.form_field(form.location)}}
             {{wtf.form_field(form.price)}}
             <button class="btn btn-lg btn-primary btn-block" type="submit">submit</button>
