@@ -37,6 +37,10 @@ def bookrec_route():
 
        return render_template("bookrec.html")
     return render_template("bookrec.html")
+
+@books_bp.route("/printdb/")
+def printdb_route():
+    return render_template("printdb.html", books_recs=books_recs )
 """
 @book_bp.route("/bookrev/", methods=['GET', 'POST'])
 def bookrev_route():
