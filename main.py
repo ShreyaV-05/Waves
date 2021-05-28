@@ -120,7 +120,7 @@ def review_map():
 
 
 review_map()
-print(review_list)
+# print(review_list)
 
 app.register_blueprint(groc_bp, url_prefix='/groc')
 app.register_blueprint(cafe_bp, url_prefix='/cafe')
@@ -136,27 +136,8 @@ app.register_blueprint(bubblesort_bp, url_prefix='/bubblesort')
 
 
 
-"""
-
---------------------------------------------------------------------------------------------------------------------
-@book_bp.route("/bookrec/", methods=['GET', 'POST'])
-def bookrec_route():
-    if request.method == 'POST':
-       genre = request.form['genre']
-       genrediff = request.form['genrediff']
-       book = request.form['book']
-       author = request.form['author']
-       descrip = request.form['descrip']
 
 
-        #  adding user into the all_user database
-        new_recommendation = (genre = genre ,genrediff = genrediff ,book = book,author = author, descrip = descrip)
-        db.session.add(new_recommendation)
-        db.session.commit()
-
-        return render_template("bookrec.html", projects=projects.setup())
-
-    return render_template("bookrec.html", projects=projects.setup())
 books_recs = []
 action_recs = []
 fantasy_recs = []
@@ -192,25 +173,12 @@ def bookrecs_map():  # mapping the front end to the backend, put in the function
         if genre == 'Other':
             #append to other books
             other_recs.append(recs_dict)
---------------------------------------------------------------------------------------------------------------------
-@book_bp.route("/bookrev/", methods=['GET', 'POST'])
-def bookrev_route():
-    if request.method == 'POST':
-       genre = request.form['genre']
-       genrediff = request.form['genrediff']
-       book = request.form['book']
-       author = request.form['author']
-       review = request.form['review']
 
+bookrecs_map()
+# print out the contents of book recs
+print(books_recs)
+print("rom_rec:"+str(rom_recs))
 
-        #  adding user into the all_user database
-        new_review = (genre = genre ,genrediff = genrediff ,book = book,author = author, review = review)
-        db.session.add(new_review)
-        db.session.commit()
-
-        return render_template("bookrev.html", projects=projects.setup())
-
-    return render_template("bookrev.html", projects=projects.setup())
 books_revs = []
 action_revs = []
 fantasy_revs = []
@@ -246,45 +214,18 @@ def bookrevs_map():  # mapping the front end to the backend, put in the function
         if genre == 'Other':
             #append to other books
             other_revs.append(revs_dict)
---------------------------------------------------------------------------------------------------------------------
-def storerec_route():
-    if request.method == 'POST':
-       storerec = request.form['storerec']
-       reclocation = request.form['reclocation']
-       recdescrip = request.form['recdescrip']
+bookrevs_map()
+print(books_revs)
 
-        #  adding user into the all_user database
-        new_recommendation = (storerec = storerec, reclocation = reclocation, recdescrip = recdescrip)
-        db.session.add(new_recommendation)
-        db.session.commit()
-
-        return render_template("storerec.html", projects=projects.setup())
-
-    return render_template("storerec.html", projects=projects.setup())
-
-
+store_recs = []
 def storerecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = storerecs.query.all()
     for rec in database:
         recs_dict = {'id':rec.id,'store': rec.storerec,'location': rec.reclocation, 'descrip':rec.recdescrip }
         store_recs.append(recs_dict)
---------------------------------------------------------------------------------------------------------------------        
-@book_bp.route("/storerev/", methods=['GET', 'POST'])
-def storerev_route():
-    if request.method == 'POST':
-       storerev = request.form['storerev']
-       storerevdiff = request.form['storerevdiff']
-       reclocation = request.form['reclocation']
-       revreview = request.form['author']
+storerecs_map()
+print(store_recs)
 
-        #  adding user into the all_user database
-        new_review = (storerev = storerev ,storerevdiff = storerevdiff ,reclocation = reclocation, revreview = revreview)
-        db.session.add(new_recommendation)
-        db.session.commit()
-
-        return render_template("storerev.html", projects=projects.setup())
-
-    return render_template("storerev.html", projects=projects.setup())
 store_revs = []
 art_revs = []
 faren_revs = []
@@ -325,9 +266,8 @@ def storerevs_map():  # mapping the front end to the backend, put in the functio
         if store == 'Other':
             #append to other store
             other_revs.append(revs_dict)
-"""
-
-
+storerevs_map()
+print(store_revs)
 
 @app.route('/')
 def home():
