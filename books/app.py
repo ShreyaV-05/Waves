@@ -37,12 +37,12 @@ def bookrec_route():
 
        return render_template("bookrec.html")
     return render_template("bookrec.html")
-
+"""
 @books_bp.route("/printdb/")
 def printdb_route():
     return render_template("printdb.html", books_recs=books_recs )
 """
-@book_bp.route("/bookrev/", methods=['GET', 'POST'])
+@books_bp.route("/bookrev/", methods=['GET', 'POST'])
 def bookrev_route():
     if request.method == 'POST':
        genre = request.form['genre']
@@ -53,27 +53,29 @@ def bookrev_route():
 
 
         #  adding user into the all_user database
-        new_review = (genre = genre ,genrediff = genrediff ,book = book,author = author, review = review)
-        db.session.add(new_review)
-        db.session.commit()
+       new_review = bookrevs(genre = genre ,genrediff = genrediff ,book = book,author = author, review = review)
+       db.session.add(new_review)
+       db.session.commit()
 
-        return render_template("bookrev.html", projects=projects.setup())
+       return render_template("bookrev.html")
+    return render_template("bookrev.html")
 
-
+@books_bp.route("/storerec/", methods=['GET', 'POST'])
 def storerec_route():
     if request.method == 'POST':
        storerec = request.form['storerec']
        reclocation = request.form['reclocation']
        recdescrip = request.form['recdescrip']
 
-        #  adding user into the all_user database
-        new_recommendation = (storerec = storerec, reclocation = reclocation, recdescrip = recdescrip)
-        db.session.add(new_recommendation)
-        db.session.commit()
+       #adding user into the all_user database
+       new_recommendation = storerecs(storerec = storerec, reclocation = reclocation, recdescrip = recdescrip)
+       db.session.add(new_recommendation)
+       db.session.commit()
 
-        return render_template("storerec.html", projects=projects.setup())
+       return render_template("storerec.html")
+    return render_template("storerec.html")
 
-@book_bp.route("/storerev/", methods=['GET', 'POST'])
+@books_bp.route("/storerev/", methods=['GET', 'POST'])
 def storerev_route():
     if request.method == 'POST':
        storerev = request.form['storerev']
@@ -82,11 +84,12 @@ def storerev_route():
        revreview = request.form['author']
 
         #  adding user into the all_user database
-        new_review = (storerev = storerev ,storerevdiff = storerevdiff ,reclocation = reclocation, revreview = revreview)
-        db.session.add(new_recommendation)
-        db.session.commit()
+       new_review = storerevs(storerev = storerev ,storerevdiff = storerevdiff ,reclocation = reclocation, revreview = revreview)
+       db.session.add(new_review)
+       db.session.commit()
 
-        return render_template("storerev.html", projects=projects.setup())
+       return render_template("storerev.html")
+    return render_template("storerev.html")
 
-"""
+
 
