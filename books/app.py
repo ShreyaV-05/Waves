@@ -11,14 +11,9 @@ def store():
     return render_template("store.html")
 
 
+
+
 """
-books_bp = Flask(__name__)
-books_bp.config['SECRET_KEY'] = 'Books'
-books_bp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-books_bp.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'  # telling program where to put the database
-db = SQLAlchemy(books_bp)  # db defined here
-Bootstrap(books_bp)
-records = []
 --------------------------------------------------------------------------------------------------------------------
 #rec books
 class bookrecs(db.Model):
@@ -89,7 +84,7 @@ class storerevs(db.Model):
 "Create Database"
 db.create_all()  # creates books.db file
 --------------------------------------------------------------------------------------------------------------------
-@app.route("/bookrec/", methods=['GET', 'POST'])
+@book_bp.route("/bookrec/", methods=['GET', 'POST'])
 def bookrec_route():
     if request.method == 'POST':
        genre = request.form['genre']
@@ -143,7 +138,7 @@ def bookrecs_map():  # mapping the front end to the backend, put in the function
             #append to other books
             other_recs.append(recs_dict)
 --------------------------------------------------------------------------------------------------------------------
-@app.route("/bookrev/", methods=['GET', 'POST'])
+@book_bp.route("/bookrev/", methods=['GET', 'POST'])
 def bookrev_route():
     if request.method == 'POST':
        genre = request.form['genre']
@@ -219,7 +214,7 @@ def storerecs_map():  # mapping the front end to the backend, put in the functio
         recs_dict = {'id':rec.id,'store': rec.storerec,'location': rec.reclocation, 'descrip':rec.recdescrip }
         store_recs.append(recs_dict)
 --------------------------------------------------------------------------------------------------------------------        
-@app.route("/storerev/", methods=['GET', 'POST'])
+@book_bp.route("/storerev/", methods=['GET', 'POST'])
 def storerev_route():
     if request.method == 'POST':
        storerev = request.form['storerev']
@@ -240,12 +235,13 @@ art_revs = []
 faren_revs = []
 ban_revs = []
 beach_revs = []
+verb_revs = []
 other_revs = []
 def storerevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = storerevs.query.all()
     for rev in database:
         revs_dict = {'id':rev.id,'store': rev.storerev,'different': rev.storerevdiff, 'location':rev.revlocation, 'review':rev.revreview }
-        store_revss.append(revs_dict)
+        store_revs.append(revs_dict)
         
         #getting the value that corresponds with the key 'store'
         store = revs_dict['store']
@@ -266,10 +262,12 @@ def storerevs_map():  # mapping the front end to the backend, put in the functio
         if store == 'Beach':
             #append to beach store
             beach_revs.append(revs_dict)
+        #if it is verb
+        if store == 'Verbatim':
+            #append to verb store
+            verb_revs.append(revs_dict)
         #if it is other
         if store == 'Other':
             #append to other store
             other_revs.append(revs_dict)
---------------------------------------------------------------------------------------------------------------------
-
 """
