@@ -124,11 +124,11 @@ body {margin:0;}
              </button>
              <div class="dropdown-content">
                  <a href = "/">Books</a>
-                 <a href = "/books/store">Book store</a>
-                 <a href = "/books/bookrev">Book Review Form</a>
-                 <a href = "/books/storerev">Bookstore Review Form</a>
-                 <a href = "/books/bookrec">Book Recommendation Form</a>
-                 <a href = "/books/storerec">Bookstore Recommendation Form</a>
+                 <a href = "{{url_for('books.store')}}">Book store</a>
+                 <a href = "">Book Review Form</a>
+                 <a href = "">Bookstore Review Form</a>
+                 <a href = "{{url_for('books.bookrec_route')}}">Book Recommendation Form</a>
+                 <a href = "">Bookstore Recommendation Form</a>
              </div>
          </div>
 
