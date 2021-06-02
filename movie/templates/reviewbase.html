@@ -1,18 +1,4 @@
 <!doctype html>
-
-<!--
-  Setting up variable used in template
-  "projects" is python object
--->
-{% set source = projects.get_source() %} <!-- source of project dict -->
-{% set projects = projects.get_projects() %} <!-- projects data -->
-{% set name = source["name"] %}
-{% set github = source["github"] %}
-{% set linkedin = source["linkedin"] %}
-{% set twitter = source["twitter"] %}
-{% set youtube = source["youtube"] %}
-
-
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,46 +7,193 @@
     {% block head %}
     {% endblock %}
 </head>
-<!--<style>
- body{
-    background-image:url('../static/Flowers.jpg')
- }
-</style> !-->
+<style>
+.mySlides {display:none;}
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.rcorners3 {
+   border-radius: 5px;
+   background: url(https://idibell.cat/en/wp-content/uploads/sites/2/2020/05/1920x1080-light-steel-blue-solid-color-background_1-611-1024x576.jpg);
+   background-position: left top;
+   background-repeat: repeat;
+   padding: 20px;
+   width: 70%;
+   height: 700px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   text-align:center;
+   color:white;
+   }
+
+.container {
+  background-color: #111111;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 10vw;
+  text-shadow: 4px 4px 0px #3F7FBF;
+  mix-blend-mode: screen;
+  animation: fadeIn 2.5s linear forwards;
+}
+
+.navbar {
+overflow: hidden;
+background-color: #333;
+}
+
+.navbar a {
+float: left;
+font-size: 16px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+.dropdown {
+float: left;
+overflow: hidden;
+}
+
+.dropdown .dropbtn {
+font-size: 16px;
+border: none;
+outline: none;
+color: white;
+padding: 14px 16px;
+background-color: inherit;
+font-family: inherit;
+margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: red;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 99;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 0.9px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid red;
+}
+
+</style>
 
 <link href="../static/bootstrap.min.css" rel="stylesheet">
 <body style="background-color:#FFFFFF;">
 
 <!-- Navigation Bar from bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">{{name}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-        <ul class="navbar-nav">
-            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="/responserev/">Review Form</a>
-            <a class="nav-link" href="/soon/">Coming Soon</a>
-            <a class="nav-link" href="/random/">Pick For Me!</a>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Restaurants
-                </a>
-                <div class="dropdown-menu" style="position: absolute; z-index: 2; background-color: black;">
-                    <a class="nav-link" href="/sandiego/">San Diego</a>
-                    <a class="nav-link" href="/SDREV/">San Diego Review</a>
-                    <a class="nav-link" href="/losangeles/">Los Angeles</a>
-                    <a class="nav-link" href="/LAREV/">Los Angeles Review</a>
-                    <a class="nav-link" href="/sanfrancisco/">San Francisco</a>
-                    <a class="nav-link" href="/SFREV/">San Francisco Review</a>
-                </div>
-
-            </li>
-
-        </ul>
+<div class="navbar">
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="groc" class="w3-bar-item w3-button">Grocery</a>
+    <a href="books" class="w3-bar-item w3-button">Books</a>
+    <a href="/cafe" class="w3-bar-item w3-button">Cafes</a>
+    <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a>
+    <div class="dropdown">
+        <button class="dropbtn">Mini-Labs
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href = "/minilabs_shreya/prime_numbers">Shreya</a>
+            <a href = "/minilabs_andrea/myfibonacci">Andrea</a>
+            <a href = "/ryan/odd">Ryan</a>
+            <a href = "/minilabs_diane/fib">Diane</a>
+            <a href = "/bubblesort/bubsort">Bubble Sort</a>
+        </div>
     </div>
-</nav>
+    <a href="/SEARCHBAR" class="w3-bar-item w3-button">Search</a>
+</div>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../static/bootstrap.bundle.min.js"></script>
 <div class="container-fluid" style="position: relative; z-index: 1;">
