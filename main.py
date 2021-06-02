@@ -30,7 +30,6 @@ app.register_blueprint(minilabs_diane_bp, url_prefix='/minilabs_diane')
 app.register_blueprint(minilabs_ryan_bp, url_prefix='/ryan')
 app.register_blueprint(bubblesort_bp, url_prefix='/bubblesort')
 
-app.register_blueprint(movie_bp, url_prefix='/moviereview')
 
 @app.route('/')
 def home():
