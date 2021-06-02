@@ -16,7 +16,8 @@ from model import store_revs, art_revs, faren_revs, ban_revs, beach_revs, verb_r
 books_bp = Blueprint('books', __name__,
                      template_folder='templates',
                      static_folder='static', static_url_path='assets')
-@books_bp.route('/')
+
+@books_bp.route('/store')
 def store():
     return render_template("store.html")
 
