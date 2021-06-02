@@ -11,6 +11,11 @@ def bookstore():
     return render_template("theatres.html")
 
 
+@movie_bp.route('/moviereview')
+def review():
+    return render_template("reviewform.html")
+
+
 """
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Movie'

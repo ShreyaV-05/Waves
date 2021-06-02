@@ -30,6 +30,7 @@ app.register_blueprint(minilabs_diane_bp, url_prefix='/minilabs_diane')
 app.register_blueprint(minilabs_ryan_bp, url_prefix='/ryan')
 app.register_blueprint(bubblesort_bp, url_prefix='/bubblesort')
 
+
 @app.route('/')
 def home():
     #Flask import uses Jinga to render HTML
