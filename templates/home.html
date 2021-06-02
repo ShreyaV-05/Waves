@@ -117,19 +117,17 @@ body {margin:0;}
     <div class="navbar">
         <a href="/" class="w3-bar-item w3-button">Home</a>
         <a href="groc" class="w3-bar-item w3-button">Grocery</a>
-        <!-- <a href="/books" class="w3-bar-item w3-button">Books</a>-->
          <div class="dropdown">
              <button class="dropbtn">Books
                  <i class="fa fa-caret-down"></i>
              </button>
              <div class="dropdown-content">
                  <a href = "/">Books</a>
-                 <a href = "{{url_for('books.store_route')}}">Book store</a>
+                 <!--<a href = "{{url_for('books.store_route')}}">Book store</a>-->
                  <a href = "{{url_for('books.bookrev_route')}}">Book Review Form</a>
                  <a href = "{{url_for('books.storerev_route')}}">Bookstore Review Form</a>
                  <a href = "{{url_for('books.bookrec_route')}}">Book Recommendation Form</a>
                  <a href = "{{url_for('books.storerec_route')}}">Bookstore Recommendation Form</a>
-                 <a href = "{{url_for('books.printdb_route')}}">display</a>
              </div>
          </div>
 
