@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!--page css-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<!--page-->
+<h3>Cafe Review Form</h3>
+
+<div class="container">
+    <form method="POST" ID="myForm" action={{url_for('.caferev_route')}}>
+
+        <label for="caferev">Cafe</label>
+        <select id="caferev" name="caferev">
+            <option value="Buzz">Better Buzz Coffee</option>
+            <option value="Bing">Bing</option>
+            <option value="CCC">Communal Coffee (Coffee Shop)</option>
+            <option value="CCB">Communal Coffee (Bar/Trailer)</option>
+            <option value="Colombe">La Colombe UTC</option>
+            <option value="Revolution">Revolution Roasters</option>
+            <option value="Moto">Cafe Moto</option>
+
+        </select>
+
+
+        <label for="caferevdiff">If selected "Other" for cafe enter title of cafe</label>
+        <textarea id="caferevdiff" name="caferevdiff" placeholder="Enter name of cafe..." style="height:200px"></textarea>
+
+
+        <label for="cafeevlocation">Only add location if different cafe from choices</label>
+        <input type="text" id="caferevlocation" name="caferevlocation" placeholder="Enter location">
+
+        <label for="caferevreview">Review</label>
+        <textarea id="caferevreview" name="caferevreview" placeholder="Review..."style="height:200px"> </textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
