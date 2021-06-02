@@ -64,7 +64,7 @@ input[type=submit]:hover {
 </div>
 <h2>Yelp Movie Theatre Reviews</h2>
 <div class="container">
-    <form method="POST" ID="myForm" action={{url_for('.responserev_route')}}>
+    <form method="POST" ID="myForm" action={{url_for('.responseform_route')}}>
         <div class="row">
             <div class="col-25">
                 <label for="fname">First Name</label>
@@ -83,13 +83,13 @@ input[type=submit]:hover {
         </div>
         <div class="row">
             <div class="col-25">
-                <label for="cuisine">Movie Theatre</label>
+                <label for="movie">Movie Theatre</label>
             </div>
             <div class="col-75">
-                <select id="cuisine" name="cuisine">
-                    <option value="Harney Sushi">Edwards Cinema</option>
-                    <option value="Din Tai Fung">Angelika</option>
-                    <option value="Bencotto Italian Kitchen">Cinepolis</option>
+                <select id="movie" name="movie">
+                    <option value="Edwards Cinema">Edwards Cinema</option>
+                    <option value="Angelika">Angelika</option>
+                    <option value="Cinepolis">Cinepolis</option>
                 </select>
                 <div>
                     <div>
