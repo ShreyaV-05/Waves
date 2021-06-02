@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Navbar -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid red;
+}
+</style>
+</head>
+{% block content %}
+<body>
+<div class="navbar">
+    <a href="/home/" class="w3-bar-item w3-button">Home</a>
+    <a href = "/">Books</a>
+    <a href = "/books/store/">Book store</a>
+    <a href = "{{url_for('books.bookrev_route')}}">Book Review Form</a>
+    <a href = "{{url_for('books.storerev_route')}}">Bookstore Review Form</a>
+    <a href = "{{url_for('books.bookrec_route')}}">Book Recommendation Form</a>
+    <a href = "{{url_for('books.storerec_route')}}">Bookstore Recommendation Form</a>
+
+</body>
+
+{% endblock %}
+</html>

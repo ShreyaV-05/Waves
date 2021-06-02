@@ -30,7 +30,6 @@ app.register_blueprint(minilabs_diane_bp, url_prefix='/minilabs_diane')
 app.register_blueprint(minilabs_ryan_bp, url_prefix='/ryan')
 app.register_blueprint(bubblesort_bp, url_prefix='/bubblesort')
 
-
 @app.route('/')
 def home():
     #Flask import uses Jinga to render HTML
@@ -47,4 +46,4 @@ def review_route():
 
 if __name__ == "__main__":
     #runs the application on the repl development server/raspberry pi
-    app.run(debug=True, port='8080', host='127.0.0.1')
+    app.run(debug=True, port='8081', host='192.168.0.24')
