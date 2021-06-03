@@ -40,13 +40,13 @@ Our current web pages on the running site include:
 *  Movies
 
 
-# Technicals achieved
-| Author| Contributions/Technicals |
+# Umbrella Tickets
+| Umbrella Tickets/Technicals |
 | -------- | ----------- |
-|Andrea|  |
-|Ryan| |
-|Diane||
-|Shreya|  |
+|Andrea| https://github.com/ShreyaV-05/Waves/issues/14 |
+|Ryan| https://github.com/ShreyaV-05/Waves/issues/12|
+|Diane|https://github.com/ShreyaV-05/Waves/issues/13|
+|Shreya| https://github.com/ShreyaV-05/Waves/issues/9 |
 
 
 # Links
