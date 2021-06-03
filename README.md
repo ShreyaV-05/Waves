@@ -41,7 +41,7 @@ Our current web pages on the running site include:
 
 
 # Umbrella Tickets
-| Umbrella Tickets/Technicals |
+| Umbrella Tickets |
 | -------- | ----------- |
 |Andrea| https://github.com/ShreyaV-05/Waves/issues/14 |
 |Ryan| https://github.com/ShreyaV-05/Waves/issues/12|
