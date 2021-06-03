@@ -55,6 +55,4 @@ Our current web pages on the running site include:
 * [College Board Requirements](https://apcentral.collegeboard.org/pdf/ap-computer-science-principles-course-and-exam-description.pdf?course=ap-computer-science-principles)
 
 
-# Big Ticket History
-
 
