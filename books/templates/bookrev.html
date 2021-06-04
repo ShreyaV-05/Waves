@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--{% extends "bookbase.html" %}-->
+{% extends "bookbase.html" %}
+{% block content %}
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +38,9 @@ input[type=submit]:hover {
   padding: 20px;
 }
 </style>
+
 </head>
+
 <body>
 
 <h3>Book Review Form</h3>
@@ -73,3 +76,4 @@ input[type=submit]:hover {
 </div>
 
 </body>
+{% endblock %}

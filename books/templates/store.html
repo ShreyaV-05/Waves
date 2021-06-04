@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--{% extends "bookbase.html" %}-->
+{% extends "bookbase.html" %}
+{% block content %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -44,6 +45,7 @@
   transform: rotateY(180deg);
 }
 </style>
+
 <body>
 
 <div class="w3-container w3-display-topmiddle">
@@ -156,3 +158,4 @@ function showDivs(n) {
 </script>
 
 </body>
+{% endblock %}

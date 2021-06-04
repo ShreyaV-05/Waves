@@ -50,10 +50,9 @@ body {margin:0;}
 }
 </style>
 </head>
-{% block content %}
 <body>
 <div class="navbar">
-    <a href="/home/" class="w3-bar-item w3-button">Home</a>
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button">Home</a>
     <a href = "/">Books</a>
     <a href = "/books/store/">Book store</a>
     <a href = "{{url_for('books.bookrev_route')}}">Book Review Form</a>
@@ -62,6 +61,8 @@ body {margin:0;}
     <a href = "{{url_for('books.storerec_route')}}">Bookstore Recommendation Form</a>
 </div>
 </body>
+{% block content %}
 
 {% endblock %}
+
 </html>

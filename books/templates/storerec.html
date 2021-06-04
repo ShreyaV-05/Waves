@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--{% extends "bookbase.html" %}-->
+{% extends "bookbase.html" %}
+{% block content %}
 <html>
 <!--page css-->
 <head>
@@ -38,7 +39,9 @@ input[type=submit]:hover {
   padding: 20px;
 }
 </style>
+
 </head>
+
 <body>
 <!--page-->
 <h3>Bookstore Recommendation Form</h3>
@@ -62,3 +65,4 @@ input[type=submit]:hover {
 </div>
 
 </body>
+{% endblock %}
