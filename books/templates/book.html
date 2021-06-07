@@ -4,6 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
+{box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
 .mySlides {display:none;}
 .flip-box {
   background-color: transparent;
@@ -48,7 +50,7 @@
 
 <body>
 <h1>Books</h1>
-<div class="w3-container w3-display-left">
+<div id="slideshow1" class="w3-container w3-display-left">
     <h2>Romance</h2>
 </div>
 
@@ -116,15 +118,11 @@
             </div>
         </div>
     </div>
-</div>
-<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
-</div>
 
-<div class="w3-container w3-display-left">
+<div id="slideshow2" class="w3-container w3-display-middle">
     <h2>Action</h2>
 </div>
-<div class= "w3-content w3-display-left”>
+<div class= "w3-content w3-display-middle”>
  <!—AB1-->
     <div class="w3-display-container mySlides">
         <div class="flip-box">
@@ -181,12 +179,8 @@
                 </div>
             </div>
         </div>
-</div>
-<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
-</div>
 
-<div class="w3-container w3-display-right”>
+<div id="slideshow3" class="w3-container w3-display-right">
     <h2>Fantasy</h2>
 </div>
 <div class="w3-content w3-display-right”>
@@ -251,22 +245,40 @@
 <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
 </div>
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+var slideshow1 = document.getElementById("slideshow1");
+slideshow1.currentSlideIndex = 1;
+showSlides(slideshow1.currentSlideIndex, slideshow1);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+var slideshow2 = document.getElementById("slideshow2");
+slideshow2.currentSlideIndex = 1;
+showSlides(slideshow2.currentSlideIndex, slideshow2);
+
+var slideshow2 = document.getElementById("slideshow3");
+slideshow2.currentSlideIndex = 1;
+showSlides(slideshow2.currentSlideIndex, slideshow3);
+
+function plusSlides(n, slideshow) {
+  showSlides(slideshow.currentSlideIndex += n, slideshow);
 }
 
-function showDivs(n) {
+function currentSlide(n, slideshow) {
+  showSlides(slideshow.currentSlideIndex = n, slideshow);
+}
+
+function showSlides(n, slideshow) {
   var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
+  var slides = slideshow.getElementsByClassName("mySlides");
+  var dots = slideshow.getElementsByClassName("dot");
+  if (n > slides.length) {slideshow.currentSlideIndex = 1}
+  if (n < 1) {slideshow.currentSlideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideshow.currentSlideIndex-1].style.display = "block";
+  dots[slideshow.currentSlideIndex-1].className += " active";
 }
 </script>
 
