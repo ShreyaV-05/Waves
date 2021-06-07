@@ -6,9 +6,9 @@ import projects
 #importing databases
 from model import bookrecs, bookrevs, storerecs, storerevs,db
 #importing list for bookrecs
-from model import books_recs, action_recs, fantasy_recs, rom_recs, biblio_recs, other_recs
+from model import books_recs, action_recs, fantasy_recs, rom_recs, other_recs
 #importing list for bookrevs
-from model import books_revs, action_revs, fantasy_revs, rom_revs, biblio_revs, other_revs
+from model import books_revs, action_revs, fantasy_revs, rom_revs, other_revs
 #importing list for storerecs
 from model import store_recs
 #importing list for storerevs
@@ -20,6 +20,10 @@ books_bp = Blueprint('books', __name__,
 @books_bp.route('/store')
 def store():
     return render_template("store.html")
+
+@books_bp.route('/book')
+def book():
+    return render_template("book.html")
 
 @books_bp.route("/bookrec/", methods=['GET', 'POST'])
 def bookrec_route():
