@@ -100,7 +100,6 @@ books_recs = []
 action_recs = []
 fantasy_recs = []
 rom_recs = []
-biblio_recs = []
 other_recs = []
 def bookrecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = bookrecs.query.all()
@@ -123,10 +122,6 @@ def bookrecs_map():  # mapping the front end to the backend, put in the function
         if genre == 'Fantasy':
             #append to fantasy books
             fantasy_recs.append(recs_dict)
-        #if it is biblio
-        if genre == 'Bibliography':
-            #append to bibliography books
-            biblio_recs.append(recs_dict)
         #if it is other
         if genre == 'Other':
             #append to other books
@@ -141,7 +136,6 @@ books_revs = []
 action_revs = []
 fantasy_revs = []
 rom_revs = []
-biblio_revs = []
 other_revs = []
 def bookrevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = bookrevs.query.all()
@@ -164,10 +158,6 @@ def bookrevs_map():  # mapping the front end to the backend, put in the function
         if genre == 'Fantasy':
             #append to fantasy books
             fantasy_revs.append(revs_dict)
-        #if it is biblio
-        if genre == 'Bibliography':
-            #append to bibliography books
-            biblio_revs.append(revs_dict)
         #if it is other
         if genre == 'Other':
             #append to other books
