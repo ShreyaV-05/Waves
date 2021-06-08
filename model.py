@@ -116,7 +116,6 @@ class caferevs(db.Model):
         self.caferevdiff = caferevdiff
         self.caferevlocation = caferevlocation
         self.caferevreview = caferevreview
-
 db.create_all()
 
 review_list = []

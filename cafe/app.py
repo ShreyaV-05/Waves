@@ -40,7 +40,7 @@ def caferev_route():
         caferev = request.form['caferev']
         caferevdiff = request.form['caferevdiff']
         cafereclocation = request.form['cafereclocation']
-        caferevreview = request.form['author']
+        caferevreview = request.form['caferevreview']
 
         #  adding user into the all_user database
         new_review = caferevs(cafeerev = caferev ,caferevdiff = caferevdiff ,cafereclocation = cafereclocation, caferevreview = caferevreview)
