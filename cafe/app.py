@@ -10,9 +10,9 @@ from model import cafe_recs
 #importing list for caferevs
 from model import cafe_revs,buzz_revs, bing_revs, ccc_revs, ccb_revs, colombe_revs, rev_revs, moto_revs, other_revs
 
-cafe_bp = Blueprint('cafe', name,
-                    template_folder='templates',
-                    static_folder='static', static_url_path='assets')
+cafe_bp = Blueprint('cafe', __name__,
+                     template_folder='templates',
+                     static_folder='static', static_url_path='assets')
 
 
 @cafe_bp.route('/')
