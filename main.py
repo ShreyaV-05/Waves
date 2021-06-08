@@ -45,4 +45,4 @@ def review_route():
     return render_template("review.html", review=review_list)
 
 if __name__ == "__main__":
-    app.run(debug=True, port='8081', host='127.0.0.1')
+    app.run(debug=True, port='8080', host='127.0.0.1')
