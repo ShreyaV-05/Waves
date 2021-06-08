@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% extends "moviebase.html" %}
+{% block content %}
+<html>
+<!--page css-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<!--page-->
+<h3>Movie Theatre Review Form</h3>
+
+<div class="container">
+    <form method="POST" ID="myForm" action={{url_for('.movierev_route')}}>
+
+        <label for="movierev">Cafe</label>
+        <select id="movierev" name="movierev">
+            <option value="edwards">Edwards Cinema</option>
+            <option value="angelika">Angelika</option>
+            <option value="cinepolis">Cinepolis</option>
+        </select>
+
+
+        <label for="movierevdiff">If selected "Other" for movie theatre enter title of movie theatre</label>
+        <textarea id="movierevdiff" name="movierevdiff" placeholder="Enter name of movie theatre..." style="height:200px"></textarea>
+
+
+        <label for="movierevlocation">Only add location if different cafe from choices</label>
+        <input type="text" id="movierevlocation" name="movierevlocation" placeholder="Enter location">
+
+        <label for="movierevreview">Review</label>
+        <textarea id="movierevreview" name="movierevreview" placeholder="Review..."style="height:200px"> </textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+{% endblock %}
