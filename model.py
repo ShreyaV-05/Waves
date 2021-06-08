@@ -85,6 +85,38 @@ class storerevs(db.Model):
         self.revlocation = revlocation
         self.revreview = revreview
 
+#rec cafe
+class caferecs(db.Model):
+    tablename = 'caferecs'
+    id = db.Column(db.Integer(), primary_key=True)
+    caferec = db.Column(db.String(1000))
+    cafereclocation =  db.Column(db.String(1000))
+    caferecdescrip = db.Column(db.String(1000))
+
+
+    # constructor that initializes the database
+    def init(self, caferec,cafereclocation, caferecdescrip):
+        self.caferec = caferec
+        self.cafereclocation = cafereclocation
+        self.caferecdescrip = caferecdescrip
+
+#rev cafe
+class caferevs(db.Model):
+    tablename = 'caferevs'
+    id = db.Column(db.Integer(), primary_key=True)
+    caferev = db.Column(db.String(1000))
+    caferevdiff = db.Column(db.String(1000))
+    caferevlocation = db.Column(db.String(1000))
+    caferevreview = db.Column(db.String(1000))
+
+
+    # constructor that initializes the database
+    def init(self, caferev,caferevdiff, caferevlocation, caferevreview):
+        self.caferev = caferev
+        self.caferevdiff = caferevdiff
+        self.caferevlocation = caferevlocation
+        self.caferevreview = caferevreview
+
 db.create_all()
 
 review_list = []
@@ -216,3 +248,67 @@ def storerevs_map():  # mapping the front end to the backend, put in the functio
             other_revs.append(revs_dict)
 storerevs_map()
 print(store_revs)
+
+cafe_recs = []
+def caferecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = caferecs.query.all()
+    for rec in database:
+        recs_dict = {'id':rec.id,'cafe': rec.caferec,'location': rec.cafereclocation, 'descrip':rec.caferecdescrip }
+        cafe_recs.append(recs_dict)
+caferecs_map()
+print(cafe_recs)
+
+
+
+cafe_revs = []
+buzz_revs = []
+bing_revs = []
+ccc_revs = []
+ccb_revs = []
+colombe_revs = []
+rev_revs = []
+moto_revs = []
+other_revs = []
+def caferevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = caferevs.query.all()
+    for rev in database:
+        revs_dict = {'id':rev.id,'cafe': rev.caferev,'different': rev.caferevdiff, 'location':rev.caferevlocation, 'review':rev.caferevreview }
+        cafe_revs.append(revs_dict)
+
+        #getting the value that corresponds with the key 'store'
+        cafe = revs_dict['cafe']
+
+        #if it is buzz
+        if cafe == 'Buzz':
+            #append to buzz store
+            buzz_revs.append(revs_dict)
+        #if it is bing
+        if cafe == 'Bing':
+            #append to bing store
+            bing_revs.append(revs_dict)
+        #if it is ccc
+        if cafe == 'CCC':
+            #append to ccc store
+            ccc_revs.append(revs_dict)
+        #if it is CCB
+        if cafe == 'CCB':
+            #append to CCB store
+            ccb_revs.append(revs_dict)
+        #if it is Colombe
+        if cafe == 'Colombe':
+            #append to Colombe store
+            colombe_revs.append(revs_dict)
+            #if it is Revolution
+        if cafe == 'Revolution':
+            #append to Revolution store
+            rev_revs.append(revs_dict)
+            #if it is Moto
+        if cafe == 'Moto':
+            #append to Moto store
+            moto_revs.append(revs_dict)
+        #if it is other
+        if cafe == 'Other':
+            #append to other store
+            other_revs.append(revs_dict)
+caferevs_map()
+print(cafe_revs)
