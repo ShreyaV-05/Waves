@@ -44,5 +44,31 @@ def SEARCHBAR_route():
 def review_route():
     return render_template("review.html", review=review_list)
 
+@app.route('/restapi/quote/', methods=['GET', 'POST'])
+def quote():
+    # call to random quote web api
+    import requests
+
+    url = "https://quotes15.p.rapidapi.com/quotes/random/"
+
+    querystring = {"language_code":"en"}
+
+    headers = {
+        'x-rapidapi-key': "be43b38cedmsh17c4689e2c1a95fp18da84jsnd77b7103f602",
+        'x-rapidapi-host': "quotes15.p.rapidapi.com"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    #quote = response.text
+
+    start1 = 'ent":'
+    end1 = ',"ur'
+    quote1 = response.text[response.text.find(start1)+len(start1):response.text.find(end1)+len(start1)-5]
+
+    quote = quote1
+
+    return render_template("home.html", Title="Home", quote=quote)
+
 if __name__ == "__main__":
     app.run(debug=True, port='8080', host='127.0.0.1')
