@@ -1,10 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+{% extends "bookbase.html" %}
+{% block content %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 100%;
+}
+
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+.columnrec {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowrec:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.columnrev {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowrev:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.columnsrec {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowsrec:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn{
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
 </head>
-<body>
+<body style="background-color:salmon;">
+
+<div class="header">
+    <h2 style="color:indianred">Recommendations and Reviews</h2>
+</div>
+
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card" >
+            <h2>Book Recommendations</h2>
+            <div class="rowrec">
+                <div class="columnrec" style="background-color:pink;">
+                    <h2>Romance</h2>
+                    <p>Put Recs here</p>
+                </div>
+                <div class="columnrec" style="background-color:orange;">
+                    <h2>Action</h2>
+                    <p>Put Recs here</p>
+                </div>
+                <div class="columnrec" style="background-color:purple;">
+                    <h2>Fantasy</h2>
+                    <p>Put Recs here</p>
+                </div>
+                <div class="columnrec" style="background-color:green;">
+                    <h2>Other Genres</h2>
+                    <p>Put Recs here</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <h2>Bookstore Recommendations</h2>
+            <div class="rowsrec">
+                <div class="columnsrec" style="background-color:lightblue;">
+                    <p>Put store recommendation here</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Book Reviews</h2>
+            <div class="rowrev">
+                <div class="columnrev" style="background-color:pink;">
+                    <h2>Romance</h2>
+                    <p>Put Revs here</p>
+                </div>
+                <div class="columnrev" style="background-color:orange;">
+                    <h2>Action</h2>
+                    <p>Put Revs here</p>
+                </div>
+                <div class="columnrev" style="background-color:purple;">
+                    <h2>Fantasy</h2>
+                    <p>Put Revs here</p>
+                </div>
+                <div class="columnrev" style="background-color:green;">
+                    <h2>Other Genres</h2>
+                    <p>Put Revs here</p>
+                </div>
+            </div>
+        </div>
+
 
 </body>
-</html>
+{% endblock %}

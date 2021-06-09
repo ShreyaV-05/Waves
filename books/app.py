@@ -25,6 +25,10 @@ def store():
 def book():
     return render_template("book.html")
 
+@books_bp.route('/recs')
+def recs():
+    return render_template("recs.html")
+
 @books_bp.route("/bookrec/", methods=['GET', 'POST'])
 def bookrec_route():
     if request.method == 'POST':
