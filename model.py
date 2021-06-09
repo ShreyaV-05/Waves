@@ -116,6 +116,25 @@ class caferevs(db.Model):
         self.caferevdiff = caferevdiff
         self.caferevlocation = caferevlocation
         self.caferevreview = caferevreview
+
+#andrea
+#rev theaters
+class movierevs(db.Model):
+    tablename = 'movierevs'
+    id = db.Column(db.Integer(), primary_key=True)
+    movierev = db.Column(db.String(1000))
+    movierevdiff = db.Column(db.String(1000))
+    movierevlocation = db.Column(db.String(1000))
+    movierevreview = db.Column(db.String(1000))
+
+
+    # constructor that initializes the database
+    def init(self, movierev,movierevdiff, movierevlocation, movierevreview):
+        self.movierev = movierev
+        self.movierevdiff = movierevdiff
+        self.movierevlocation = movierevlocation
+        self.movierevreview = movierevreview
+
 db.create_all()
 
 review_list = []
