@@ -344,3 +344,5 @@ def movierevs_map():  # mapping the front end to the backend, put in the functio
             other_revs.append(revs_dict)
 movierevs_map()
 print(movie_revs)
+
+#andrea section
