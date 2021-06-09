@@ -5,16 +5,16 @@ from model import movierevs,db
 #importing list for movierevs
 from model import edwards_revs, angelika_revs, cinepolis_revs, movie_revs, other_revs
 
-movie_bp = Blueprint('movie', name,
+movie_bp = Blueprint('movie', __name__,
                      template_folder='templates',
                      static_folder='static', static_url_path='assets')
 
 
-@movie_bp.route(‘/theatres’)
+@movie_bp.route("/theatres")
 def theatres():
     return render_template("theatres.html")
 
-@movie_bp.route(“/movierev”, methods=['GET', 'POST'])
+@movie_bp.route('/movierev', methods=['GET', 'POST'])
 def movierev_route():
     if request.method == 'POST':
         movierev = request.form['movierev']
