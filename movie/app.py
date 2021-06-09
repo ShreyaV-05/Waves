@@ -20,7 +20,7 @@ def movierev_route():
         movierev = request.form['movierev']
         movierevdiff = request.form['movierevdiff']
         moviereclocation = request.form['moviereclocation']
-        movieevreview = request.form['movierevreview']
+        movierevreview = request.form['movierevreview']
 
         #  adding user into the all_user database
         new_review = movierevs(movieerev = movierev ,movierevdiff = movierevdiff ,moviereclocation = moviereclocation, movierevreview = movierevreview)
