@@ -116,6 +116,24 @@ class caferevs(db.Model):
         self.caferevdiff = caferevdiff
         self.caferevlocation = caferevlocation
         self.caferevreview = caferevreview
+
+#andrea
+#rev theaters
+class movierevs(db.Model):
+    tablename = 'movierevs'
+    id = db.Column(db.Integer(), primary_key=True)
+    movierev = db.Column(db.String(1000))
+    movierevdiff = db.Column(db.String(1000))
+    movierevlocation = db.Column(db.String(1000))
+    movierevreview = db.Column(db.String(1000))
+
+
+    # constructor that initializes the database
+    def init(self, movierev,movierevdiff, movierevlocation, movierevreview):
+        self.movierev = movierev
+        self.movierevdiff = movierevdiff
+        self.movierevlocation = movierevlocation
+        self.movierevreview = movierevreview
 db.create_all()
 
 review_list = []
@@ -311,3 +329,40 @@ def caferevs_map():  # mapping the front end to the backend, put in the function
             other_revs.append(revs_dict)
 caferevs_map()
 print(cafe_revs)
+
+
+#andrea
+edwards_revs = []
+angelika_revs = []
+cinepolis_revs = []
+movie_revs = []
+other_revs = []
+def movierevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
+    database = movierevs.query.all()
+    for rev in database:
+        revs_dict = {'id':rev.id,'movie': rev.caferev,'different': rev.movierevdiff, 'location':rev.movierevlocation, 'review':rev.movierevreview}
+        movie_revs.append(revs_dict)
+
+        #getting the value that corresponds with the key 'store'
+        theater = revs_dict['movie']
+
+        #if it is edwards
+        if theater == 'edwards':
+            #append to edwards
+            edwards_revs.append(revs_dict)
+        #if it is angelika
+        if theater == 'angelika':
+            #append to angelika
+            angelika_revs.append(revs_dict)
+        #if it is cinepolis
+        if theater == 'cinepolis':
+            #append to cinepolis
+            cinepolis_revs.append(revs_dict)
+        #if it is other
+        if theater == 'other':
+            #append to other store
+            other_revs.append(revs_dict)
+movierevs_map()
+print(movie_revs)
+
+
