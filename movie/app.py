@@ -10,7 +10,7 @@ movie_bp = Blueprint('movie', __name__,
                      static_folder='static', static_url_path='assets')
 
 
-@movie_bp.route("/theatres")
+@movie_bp.route("/")
 def theatres():
     return render_template("theatres.html")
 

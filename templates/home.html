@@ -141,8 +141,17 @@ body {margin:0;}
                 <a href = "{{url_for('cafe.caferec_route')}}">Cafe Recommendation Form</a>
             </div>
         </div>
+        <div class="dropdown">
+            <button class="dropbtn">Movie Theatres
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/movie" class="w3-bar-item w3-button">Movie Theatres</a>
+                <a href = "{{url_for('movie.movierev_route')}}">Movie Theatre Review Form</a>
+            </div>
+        </div>
 
-        <a href="/movie" class="w3-bar-item w3-button">Movie Theatres</a>
+        <!-- <a href="/movie" class="w3-bar-item w3-button">Movie Theatres</a> -->
         <div class="dropdown">
             <button class="dropbtn">Mini-Labs
                 <i class="fa fa-caret-down"></i>
