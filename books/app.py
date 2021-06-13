@@ -19,7 +19,7 @@ books_bp = Blueprint('books', __name__,
 
 @books_bp.route('/store')
 def store():
-    return render_template("store.html")
+    return render_template("store.html", art_revs=art_revs, faren_revs=faren_revs, ban_revs=ban_revs, beach_revs=beach_revs, verb_revs=verb_revs)
 
 @books_bp.route('/book')
 def book():
@@ -27,7 +27,7 @@ def book():
 
 @books_bp.route('/recs')
 def recs():
-    return render_template("recs.html")
+    return render_template("recs.html", action_recs = action_recs , fantasy_recs=fantasy_recs , rom_recs=rom_recs , other_recs=other_recs, action_revs = action_revs , fantasy_revs=fantasy_revs , rom_revs=rom_revs , other_revs=other_revs, store_recs= store_recs )
 
 @books_bp.route("/bookrec/", methods=['GET', 'POST'])
 def bookrec_route():
