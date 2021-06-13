@@ -85,6 +85,11 @@ body {
   width: 150px;
   border-radius: 50%;
 }
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 </style>
 
 <body style="background-color:powderblue;">
@@ -124,7 +129,9 @@ body {
         </div>
         <div class="columndis" style="background-color:#FFFFFF00;">
             <h3>Reviews</h3>
-            <p sytle="color:#01AC78;"></p>
+            {% for row in art_revs %}
+            <h4 sytle="color:#01AC78;">{{row['review']}}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -141,6 +148,9 @@ body {
         </div>
         <div class="columndis" style="background-color:#FFFFFF00;">
             <h3>Reviews</h3>
+            {% for row in faren_revs %}
+            <h4 sytle="color:#01AC78;">{{row['review']}}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -156,6 +166,9 @@ body {
         </div>
         <div class="columndis" style="background-color:#FFFFFF00;">
             <h3>Reviews</h3>
+            {% for row in beach_revs %}
+            <h4 sytle="color:#01AC78;">{{row['review']}}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -173,6 +186,9 @@ body {
         </div>
         <div class="columndis" style="background-color:#FFFFFF00;">
             <h3>Reviews</h3>
+            {% for row in verb_revs %}
+            <h4 sytle="color:#01AC78;">{{row['review']}}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -189,6 +205,9 @@ body {
         </div>
         <div class="columndis" style="background-color:#FFFFFF00;">
             <h3>Reviews</h3>
+            {% for row in ban_revs %}
+            <h4 sytle="color:#01AC78;">{{row['review']}}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>

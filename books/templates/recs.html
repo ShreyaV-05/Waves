@@ -92,6 +92,12 @@ body {
   display: table;
   clear: both;
 }
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .leftcolumn{
@@ -114,19 +120,39 @@ body {
             <div class="rowrec">
                 <div class="columnrec" style="background-color:pink;">
                     <h2>Romance</h2>
-                    <p>Put Recs here</p>
+                    {% for row in rom_recs %}
+                    <div class="container">
+                        <p>{{row['book']}} - {{row['author']}}</p>
+                        <p>{{row['descrip']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrec" style="background-color:orange;">
                     <h2>Action</h2>
-                    <p>Put Recs here</p>
+                    {% for row in action_recs %}
+                    <div class="container">
+                        <p>{{row['book']}} - {{row['author']}}</p>
+                        <p>{{row['descrip']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrec" style="background-color:purple;">
                     <h2>Fantasy</h2>
-                    <p>Put Recs here</p>
+                    {% for row in fantasy_recs %}
+                    <div class="container">
+                        <p>{{row['book']}} - {{row['author']}}</p>
+                        <p>{{row['descrip']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrec" style="background-color:green;">
                     <h2>Other Genres</h2>
-                    <p>Put Recs here</p>
+                    {% for row in other_recs %}
+                    <div class="container">
+                        <p>{{row['book']}} - {{row['author']}}</p>
+                        <p>{{row['descrip']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -135,7 +161,11 @@ body {
             <h2>Bookstore Recommendations</h2>
             <div class="rowsrec">
                 <div class="columnsrec" style="background-color:lightblue;">
-                    <p>Put store recommendation here</p>
+                    {% for row in store_recs %}
+                    <div class="container">
+                        <p>{{row['store']}} - {{row['location']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -144,19 +174,39 @@ body {
             <div class="rowrev">
                 <div class="columnrev" style="background-color:pink;">
                     <h2>Romance</h2>
-                    <p>Put Revs here</p>
+                    {% for row in rom_revs %}
+                    <div class="container">
+                         <p>{{row['book']}} - - {{row['author']}}</p>
+                         <p>{{row['review']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrev" style="background-color:orange;">
                     <h2>Action</h2>
-                    <p>Put Revs here</p>
+                    {% for row in action_revs %}
+                    <div class="container">
+                         <p>{{row['book']}} - - {{row['author']}}</p>
+                         <p>{{row['review']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrev" style="background-color:purple;">
                     <h2>Fantasy</h2>
-                    <p>Put Revs here</p>
+                    {% for row in fantasy_revs %}
+                    <div class="container">
+                         <p>{{row['book']}} - - {{row['author']}}</p>
+                         <p>{{row['review']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="columnrev" style="background-color:green;">
                     <h2>Other Genres</h2>
-                    <p>Put Revs here</p>
+                    {% for row in other_revs %}
+                    <div class="container">
+                        <p>{{row['genrediff']}} - {{row['book']}} - {{row['author']}}</p>
+                        <p>{{row['review']}}</p>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

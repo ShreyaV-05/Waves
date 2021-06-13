@@ -154,7 +154,7 @@ other_recs = []
 def bookrecs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = bookrecs.query.all()
     for rec in database:
-        recs_dict = {'id':rec.id, 'genre': rec.genre, 'book': rec.book, 'descrip':rec.descrip}
+        recs_dict = {'id':rec.id, 'genre': rec.genre, 'book': rec.book, 'descrip':rec.descrip, 'author': rec.author}
         books_recs.append(recs_dict)
 
         #getting the value that corresponds with the key 'location'
@@ -190,7 +190,7 @@ other_revs = []
 def bookrevs_map():  # mapping the front end to the backend, put in the function so we don't have to copy and paste
     database = bookrevs.query.all()
     for rev in database:
-        revs_dict = {'id':rev.id, 'genre': rev.genre, 'book': rev.book, 'review':rev.review}
+        revs_dict = {'id':rev.id, 'genre': rev.genre, 'book': rev.book, 'review':rev.review, 'genrediff': rev.genrediff, 'author': rev.author}
         books_revs.append(revs_dict)
 
         #getting the value that corresponds with the key 'genre'
