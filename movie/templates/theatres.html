@@ -167,27 +167,11 @@ body {margin:0;}
 <body style="background-color:black;">
 
 <div class="navbar">
-    <a href="/" class="w3-bar-item w3-button">Home</a>
-    <a href="groc" class="w3-bar-item w3-button">Grocery</a>
-    <a href="books" class="w3-bar-item w3-button">Books</a>
-    <a href="/cafe" class="w3-bar-item w3-button">Cafes</a>
-    <a href="movie" class="w3-bar-item w3-button">Movie Theatres</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mini-Labs
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href = "/minilabs_shreya/prime_numbers">Shreya</a>
-            <a href = "/minilabs_andrea/myfibonacci">Andrea</a>
-            <a href = "/ryan/odd">Ryan</a>
-            <a href = "/minilabs_diane/fib">Diane</a>
-            <a href = "/bubblesort/bubsort">Bubble Sort</a>
-        </div>
-    </div>
-    <a href="/SEARCHBAR" class="w3-bar-item w3-button">Search</a>
+    <a href="{{url_for('home')}}" class="w3-bar-item w3-button">Home</a>
+    <a href = "/movie">Movie Theatres</a>
+    <a href = "{{url_for('movie.movierev_route')}}">Movie Theatre Review Form</a>
+    <a href = "/movie/reviews">Movie Theatre Reviews</a>
 </div>
-</div>
-
 <div class="container">
     <h1 class="heading">Movie Theatres</h1>
 </div>

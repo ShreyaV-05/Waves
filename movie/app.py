@@ -14,16 +14,20 @@ movie_bp = Blueprint('movie', __name__,
 def theatres():
     return render_template("theatres.html")
 
+@movie_bp.route('/reviews')
+def recs():
+    return render_template("revs.html", edwards_revs = edwards_revs , angelika_revs=angelika_revs , cinepolis_revs=cinepolis_revs , other_revs=other_revs)
+
 @movie_bp.route('/movierev', methods=['GET', 'POST'])
 def movierev_route():
     if request.method == 'POST':
         movierev = request.form['movierev']
         movierevdiff = request.form['movierevdiff']
-        moviereclocation = request.form['moviereclocation']
+        movierevlocation = request.form['movierevlocation']
         movierevreview = request.form['movierevreview']
 
         #  adding user into the all_user database
-        new_review = movierevs(movieerev = movierev ,movierevdiff = movierevdiff ,moviereclocation = moviereclocation, movierevreview = movierevreview)
+        new_review = movierevs(movieerev = movierev ,movierevdiff = movierevdiff ,moviereclocation = movierevlocation, movierevreview = movierevreview)
         db.session.add(new_review)
         db.session.commit()
 
